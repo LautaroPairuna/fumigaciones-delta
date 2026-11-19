@@ -1,0 +1,248 @@
+- generic [active] [ref=e1]:
+  - link "Saltar al contenido" [ref=e2] [cursor=pointer]:
+    - /url: "#contenido"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Traza, ir al inicio" [ref=e5] [cursor=pointer]:
+        - /url: "#inicio"
+        - generic [ref=e9]: traza.
+      - navigation "Navegación principal" [ref=e10]:
+        - link "La empresa" [ref=e11] [cursor=pointer]:
+          - /url: "#empresa"
+        - link "Servicios" [ref=e12] [cursor=pointer]:
+          - /url: "#servicios"
+        - link "Resultados" [ref=e13] [cursor=pointer]:
+          - /url: "#resultados"
+        - link "Contacto" [ref=e14] [cursor=pointer]:
+          - /url: "#contacto"
+        - link "Cotizar mi espacio" [ref=e15] [cursor=pointer]:
+          - /url: "#cotizar"
+  - main [ref=e19]:
+    - region [ref=e20]:
+      - generic [ref=e23]:
+        - paragraph [ref=e24]: Fumigaciones en CABA y GBA
+        - heading "Volvé a disfrutar de tu espacio." [level=1] [ref=e26]: Volvé a disfrutarde tu espacio.
+        - paragraph [ref=e27]: Control de plagas pensado para tu tranquilidad. Un tratamiento preciso. Un cuidado que continúa.
+        - generic [ref=e28]:
+          - link "Encontrá tu solución" [ref=e29] [cursor=pointer]:
+            - /url: "#cotizar"
+          - link "Explorar servicios" [ref=e32] [cursor=pointer]:
+            - /url: "#servicios"
+      - generic [ref=e35]:
+        - paragraph [ref=e36]: Tu lugar, en buenas manos.
+        - link "Desplazarse a servicios" [ref=e39] [cursor=pointer]:
+          - /url: "#servicios"
+          - generic [ref=e40]: Conocé cómo
+          - generic [ref=e41]: ↓
+      - button "Pausar ambiente" [pressed] [ref=e42] [cursor=pointer]:
+        - generic [aria-hidden] [ref=e43]: Ⅱ
+      - generic [aria-hidden] [ref=e45]: Espacios para vivir. Razones para cuidar.
+    - generic "Espacios que atendemos" [ref=e47]:
+      - paragraph [ref=e48]:
+        - text: Cuidado profesional.
+        - strong [ref=e49]: Donde lo necesitás.
+      - generic [ref=e50]: Hogares
+      - generic [ref=e53]: Consorcios
+      - generic [ref=e56]: Comercios
+      - generic [ref=e59]: Exteriores
+    - region [ref=e62]:
+      - generic [ref=e63]:
+        - generic [ref=e64]:
+          - paragraph [ref=e65]: Nuestros servicios
+          - heading "Cada espacio tiene su solución." [level=2] [ref=e66]: Cada espacio tienesu solución.
+        - paragraph [ref=e67]: No todas las plagas se tratan igual.Conocé el enfoque para tu hogar, tu edificio o tu lugar de trabajo.
+      - tablist "Servicios por tipo de espacio" [ref=e68]:
+        - tab "Hogares" [selected] [ref=e69] [cursor=pointer]
+        - tab "Consorcios" [ref=e74] [cursor=pointer]
+        - tab "Comercios" [ref=e79] [cursor=pointer]
+        - tab "Exteriores" [ref=e84] [cursor=pointer]
+      - tabpanel "Hogares" [ref=e89]:
+        - figure "Precisión en cada intervención" [ref=e90]:
+          - img "Imagen ilustrativa de una aplicación localizada de gel en una junta" [ref=e91]
+        - generic [ref=e96]:
+          - text: Casas, departamentos y PH
+          - heading "Tu casa es para sentirte bien." [level=3] [ref=e97]: Tu casa es parasentirte bien.
+          - paragraph [ref=e98]: Una solución que empieza por entender qué está pasando. Identificamos los focos y definimos un tratamiento adaptado a los ambientes y a quienes los habitan.
+          - list [ref=e99]:
+            - listitem [ref=e100]: ✓ Inspección de los puntos de actividad
+            - listitem [ref=e101]: ✓ Tratamiento focalizado según la plaga
+            - listitem [ref=e102]: ✓ Indicaciones de cuidado y prevención
+          - generic [ref=e103]:
+            - generic [ref=e104]: Cucarachas
+            - generic [ref=e105]: Hormigas
+            - generic [ref=e106]: Roedores
+            - generic [ref=e107]: Otras plagas
+          - link "Consultar por mi hogar" [ref=e108] [cursor=pointer]:
+            - /url: "#cotizar"
+      - text: ✓ ✓ ✓ ✓ ✓ ✓ ✓ ✓ ✓
+      - generic [ref=e111]:
+        - paragraph [ref=e112]: ¿No sabés qué plaga es? El primer paso es identificarla.
+        - link "Contanos qué observaste" [ref=e113] [cursor=pointer]:
+          - /url: "#cotizar"
+    - region [ref=e116]:
+      - generic [ref=e117]:
+        - generic [ref=e118]:
+          - paragraph [ref=e119]: La empresa
+          - heading "Cuidar tu espacio es cuidar tu tranquilidad." [level=2] [ref=e120]: Cuidar tu espacioes cuidar tutranquilidad.
+          - paragraph [ref=e121]: En Traza, el control de plagas empieza por escuchar. Cada hogar, cada negocio y cada edificio tiene una rutina que merece ser respetada.
+          - paragraph [ref=e122]: Por eso, nuestro enfoque combina diagnóstico, intervención y prevención. Con información clara, desde la primera consulta.
+          - link "Nuestra forma de trabajar" [ref=e123] [cursor=pointer]:
+            - /url: "#metodo"
+        - generic [ref=e126]:
+          - article [ref=e127]:
+            - generic [ref=e131]:
+              - heading "Entender antes de actuar." [level=3] [ref=e132]
+              - paragraph [ref=e133]: La plaga, el ambiente y su uso definen el tratamiento. La solución empieza con un diagnóstico.
+          - article [ref=e134]:
+            - generic [ref=e138]:
+              - heading "Todo claro, desde el inicio." [level=3] [ref=e139]
+              - paragraph [ref=e140]: Alcance, preparación del espacio y próximos pasos. La información que necesitás para decidir.
+          - article [ref=e141]:
+            - generic [ref=e145]:
+              - heading "Mirar más allá de la visita." [level=3] [ref=e146]
+              - paragraph [ref=e147]: Prevenir nuevos focos también es parte del cuidado. Definimos el seguimiento que requiere cada caso.
+    - region [ref=e148]:
+      - generic [ref=e149]:
+        - generic [ref=e150]:
+          - paragraph [ref=e151]: Así trabajamos
+          - heading "De la preocupación a un plan claro." [level=2] [ref=e152]: De la preocupacióna un plan claro.
+        - paragraph [ref=e153]: Un recorrido simple.Siempre sabés cuál es el próximo paso.
+      - list [ref=e154]:
+        - listitem [ref=e155]:
+          - generic [ref=e156]: "01"
+          - heading "Te escuchamos" [level=3] [ref=e157]
+          - paragraph [ref=e158]: Contanos qué observaste, en qué espacio y en qué zona estás.
+        - listitem [ref=e159]:
+          - generic [ref=e160]: "02"
+          - heading "Definimos el plan" [level=3] [ref=e161]
+          - paragraph [ref=e162]: Evaluamos el caso y acordamos el alcance y el presupuesto.
+        - listitem [ref=e163]:
+          - generic [ref=e164]: "03"
+          - heading "Intervenimos" [level=3] [ref=e165]
+          - paragraph [ref=e166]: Coordinamos la visita y te explicamos cómo preparar el lugar.
+        - listitem [ref=e167]:
+          - generic [ref=e168]: "04"
+          - heading "Seguimos el cuidado" [level=3] [ref=e169]
+          - paragraph [ref=e170]: Te orientamos en prevención y en los controles que correspondan.
+    - region [ref=e171]:
+      - generic [ref=e172]:
+        - generic [ref=e173]:
+          - paragraph [ref=e174]: El resultado que buscamos
+          - heading "Que vuelvas a pensar en lo que importa." [level=2] [ref=e175]: Que vuelvas a pensaren lo que importa.
+          - paragraph [ref=e176]: Tu casa, tu trabajo, tus planes. Nuestro objetivo es que el control de plagas deje de ser una preocupación y se convierta en un cuidado organizado.
+          - generic [ref=e177]:
+            - generic [ref=e181]:
+              - strong [ref=e182]: El problema identificado
+              - text: Focos y puntos de acceso relevados.
+            - generic [ref=e186]:
+              - strong [ref=e187]: Un camino definido
+              - text: Tratamiento y recomendaciones para tu espacio.
+            - generic [ref=e191]:
+              - strong [ref=e192]: Una mirada preventiva
+              - text: Próximos pasos para reducir nuevas apariciones.
+          - link "Empecemos por tu espacio" [ref=e193] [cursor=pointer]:
+            - /url: "#cotizar"
+        - figure [ref=e196]:
+          - img "Imagen ilustrativa de un jardín preparado para una cena al aire libre" [ref=e197]
+          - generic [ref=e198]: El espacio es tuyo.La tranquilidad, también.
+    - region [ref=e199]:
+      - generic [ref=e200]:
+        - generic [ref=e201]:
+          - paragraph [ref=e202]: Tu consulta, a medida
+          - heading "Un espacio cuidado empieza con una conversación." [level=2] [ref=e203]: Un espacio cuidadoempieza conuna conversación.
+          - paragraph [ref=e204]: Contanos lo que necesitás. Te ayudamos a preparar una consulta con la información importante, sin compromisos.
+          - paragraph [ref=e208]: El presupuesto se define después de evaluar tu caso. Sin precios automáticos ni sorpresas.
+        - generic [ref=e217]:
+          - generic [ref=e218]:
+            - generic [ref=e219]: Prepará tu consulta
+            - generic [ref=e220]: Paso 1 de 3
+          - group "Tipo de espacio" [ref=e223]:
+            - heading "¿Qué espacio necesitás cuidar?" [level=3] [ref=e225]
+            - paragraph [ref=e226]: Elegí la opción que mejor describe tu lugar.
+            - generic [ref=e227]:
+              - generic [ref=e228] [cursor=pointer]:
+                - radio "Mi hogar Casa, departamento o PH" [ref=e229]
+                - generic [ref=e232]:
+                  - strong [ref=e233]: Mi hogar
+                  - generic [ref=e234]: Casa, departamento o PH
+              - generic [ref=e236] [cursor=pointer]:
+                - radio "Un consorcio Edificio y áreas comunes" [ref=e237]
+                - generic [ref=e240]:
+                  - strong [ref=e241]: Un consorcio
+                  - generic [ref=e242]: Edificio y áreas comunes
+              - generic [ref=e244] [cursor=pointer]:
+                - radio "Mi comercio Local, cocina o depósito" [ref=e245]
+                - generic [ref=e248]:
+                  - strong [ref=e249]: Mi comercio
+                  - generic [ref=e250]: Local, cocina o depósito
+              - generic [ref=e252] [cursor=pointer]:
+                - radio "Un espacio exterior Patio, jardín o quinta" [ref=e253]
+                - generic [ref=e256]:
+                  - strong [ref=e257]: Un espacio exterior
+                  - generic [ref=e258]: Patio, jardín o quinta
+            - generic [ref=e260]:
+              - generic [ref=e328]: Solo 3 pasos simples
+              - button "Describir el problema" [ref=e261] [cursor=pointer]
+    - region [ref=e264]:
+      - generic [ref=e265]:
+        - paragraph [ref=e266]: Estamos para orientarte
+        - heading "Hablemos de tu espacio." [level=2] [ref=e267]: Hablemos detu espacio.
+        - paragraph [ref=e268]: Una duda también es un buen comienzo.Prepará tu consulta y encontrá el próximo paso.
+        - link "Preparar mi consulta" [ref=e269] [cursor=pointer]:
+          - /url: "#cotizar"
+      - generic [ref=e272]:
+        - article [ref=e273]:
+          - generic [ref=e277]:
+            - heading "CABA y Gran Buenos Aires" [level=3] [ref=e278]
+            - paragraph [ref=e279]: Indicá tu barrio o localidad para confirmar la cobertura y coordinar la visita.
+            - generic [ref=e280]:
+              - generic [ref=e281]: Ciudad de Buenos Aires
+              - generic [ref=e282]: GBA · consultar zona
+        - article [ref=e283]:
+          - generic [ref=e287]:
+            - heading "Atención a medida" [level=3] [ref=e288]
+            - paragraph [ref=e289]: Consultas para hogares, administraciones, locales comerciales y espacios al aire libre.
+            - link "Ver todos los servicios" [ref=e290] [cursor=pointer]:
+              - /url: "#servicios"
+    - region [ref=e293]:
+      - heading "Antes de empezar." [level=2] [ref=e294]
+      - generic [ref=e295]:
+        - group [ref=e296]:
+          - generic "¿Tengo que saber qué plaga es?" [ref=e297] [cursor=pointer]:
+            - text: ¿Tengo que saber qué plaga es?
+            - generic [aria-hidden] [ref=e298]: +
+        - group [ref=e299]:
+          - generic "¿Cómo se calcula el presupuesto?" [ref=e300] [cursor=pointer]:
+            - text: ¿Cómo se calcula el presupuesto?
+            - generic [aria-hidden] [ref=e301]: +
+        - group [ref=e302]:
+          - generic "¿Qué pasa si hay chicos o mascotas?" [ref=e303] [cursor=pointer]:
+            - text: ¿Qué pasa si hay chicos o mascotas?
+            - generic [aria-hidden] [ref=e304]: +
+        - group [ref=e305]:
+          - generic "¿Puedo consultar por un servicio periódico?" [ref=e306] [cursor=pointer]:
+            - text: ¿Puedo consultar por un servicio periódico?
+            - generic [aria-hidden] [ref=e307]: +
+  - contentinfo [ref=e308]:
+    - generic [ref=e309]:
+      - generic [ref=e310]:
+        - link "Traza, volver al inicio" [ref=e311] [cursor=pointer]:
+          - /url: "#inicio"
+          - generic [ref=e315]: traza.
+        - paragraph [ref=e316]: Espacios cuidados.Personas tranquilas.
+        - link "Volver arriba" [ref=e317] [cursor=pointer]:
+          - /url: "#inicio"
+          - text: Volver arriba
+          - generic [aria-hidden] [ref=e318]: ↑
+      - generic [ref=e319]:
+        - paragraph [ref=e320]: Traza · Fumigaciones y control de plagas
+        - navigation "Navegación del pie" [ref=e321]:
+          - link "La empresa" [ref=e322] [cursor=pointer]:
+            - /url: "#empresa"
+          - link "Servicios" [ref=e323] [cursor=pointer]:
+            - /url: "#servicios"
+          - link "Cotización" [ref=e324] [cursor=pointer]:
+            - /url: "#cotizar"
+          - link "Contacto" [ref=e325] [cursor=pointer]:
+            - /url: "#contacto"
+        - paragraph [ref=e326]: Imágenes ilustrativas.

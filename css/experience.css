@@ -1,0 +1,355 @@
+/* A field notebook for the places where pest activity begins. */
+:root {
+  --paper: #f0f1eb;
+  --ink: #173746;
+  --muted: #566962;
+  --blue: #285864;
+  --blue-dark: #173d47;
+  --sky: #e1e7df;
+  --line: #cbd4cc;
+  --night: #173d43;
+  --copper: #b36237;
+  --signal: #f0c18d;
+  --display: "Archivo", "Manrope", sans-serif;
+}
+html { -webkit-tap-highlight-color: #28586422; }
+body { background: var(--paper); }
+h1, h2, h3 { font-family: var(--display); }
+h2 { letter-spacing: -.045em; }
+.site-header { background: #f0f1ebf2; }
+.header-inner { height: 86px; }
+.brand { font-family: var(--display); font-size: 39px; font-weight: 700; }
+.brand-mark { width: 34px; height: 34px; }
+.brand-dot { color: var(--copper); }
+.site-nav { gap: 26px; }
+.button { border-radius: 3px; }
+.button:hover { box-shadow: none; }
+.button-small { border-radius: 3px; }
+.section-label { font-size: 12px; color: var(--copper); }
+.reading-progress span { background: var(--copper); }
+:focus-visible { outline-color: #b36237; }
+
+/* A living inspection scene, with a real action to reveal the traces. */
+.experience-hero { display: grid; grid-template-columns: .95fr 1.05fr; position: relative; max-width: 1600px; margin: auto; background: var(--night); color: white; }
+.experience-intro { position: relative; isolation: isolate; overflow: hidden; display: flex; flex-direction: column; align-items: flex-start; padding: 65px 52px 34px max(48px, calc((100vw - 1240px) / 2)); background: #102c32; }
+.hero-backdrop { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.hero-backdrop img, .hero-backdrop video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 78% center; }
+.hero-backdrop video { opacity: 0; }
+.hero-backdrop video.is-playing { opacity: 1; }
+.hero-backdrop::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #102c32eb 0%, #102c32b3 36%, #102c325c 68%, #102c3224 100%), linear-gradient(180deg, #102c3238, transparent 26%, #102c326e); }
+.experience-location, .experience-intro h1, .experience-lead, .experience-foot { text-shadow: 0 1px 16px #102c32; }
+.experience-location { position: relative; z-index: 1; display: flex; align-items: center; gap: 10px; font-size: 11px; color: #d7e2d9; }
+.experience-location .icon { width: 20px; height: 20px; flex-basis: 20px; color: var(--signal); }
+.experience-intro h1 { font-size: clamp(58px, 6.05vw, 90px); line-height: 1.02; letter-spacing: -.065em; font-weight: 500; margin: 45px 0 25px -4px; position: relative; z-index: 1; }
+.experience-lead { position: relative; z-index: 1; max-width: 350px; font-size: 14px; line-height: 1.85; color: #d0dcd4; }
+.experience-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 19px; margin-top: 31px; position: relative; z-index: 1; }
+.inspection-activate { background: #ecd5b6; color: #153b43; border-color: #ecd5b6; padding: 16px 21px; font-size: 12px; gap: 13px; min-height: 55px; }
+.inspection-activate:hover, .inspection-activate[aria-pressed="true"] { background: #f5e3c9; color: #153b43; border-color: #f5e3c9; }
+.inspection-activate:focus-visible { outline-color: var(--signal); }
+.experience-quote { display: inline-flex; align-items: center; gap: 16px; font-size: 11px; color: #e4ebe5; padding-block: 8px; }
+.experience-quote .icon { width: 18px; height: 18px; flex-basis: 18px; }
+.experience-quote:hover { color: white; text-decoration: underline; text-underline-offset: 5px; }
+.experience-foot { display: flex; justify-content: space-between; align-items: center; gap: 20px; width: 100%; font-size: 10px; color: #c2d2c9; padding-top: 58px; margin-top: auto; position: relative; z-index: 1; }
+.experience-foot a { display: flex; align-items: center; gap: 13px; padding-block: 10px; }
+.experience-foot a:hover { color: white; }
+.experience-foot a span { color: var(--signal); font-size: 18px; }
+.hero-watermark { position: absolute; bottom: -81px; left: 16px; z-index: -1; font-family: var(--display); font-size: 300px; letter-spacing: -.075em; line-height: 1; font-weight: 700; color: #ffffff05; pointer-events: none; }
+.inspection-scene { min-width: 0; background: #102c32; }
+.inspection-image { position: relative; height: 520px; overflow: hidden; background: #18252a; }
+.inspection-image > img, .inspection-image > video { width: 100%; height: 100%; object-fit: cover; object-position: 62% center; position: absolute; inset: 0; }
+.inspection-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, #071d2866, transparent 30%, #071d280a 70%, #071d2855); pointer-events: none; }
+.inspection-topbar { position: absolute; top: 24px; left: 24px; right: 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; z-index: 4; }
+.inspection-topbar > span { display: inline-flex; gap: 8px; align-items: center; color: #f2eee4; font-size: 10px; background: #102c3277; padding: 8px 10px; border-radius: 2px; }
+.inspection-led { width: 5px; height: 5px; border-radius: 50%; background: var(--signal); }
+.inspection-video { display: inline-flex; align-items: center; gap: 8px; border: 1px solid #ffffff40; color: white; background: #102c3277; padding: 8px 11px; min-height: 38px; font-size: 9px; border-radius: 2px; }
+.inspection-video:hover { background: #102c32; }
+.inspection-corners { position: absolute; inset: 86px 27px 52px; background: linear-gradient(#e7ddd5aa, #e7ddd5aa) left top / 24px 1px no-repeat, linear-gradient(#e7ddd5aa, #e7ddd5aa) left top / 1px 24px no-repeat, linear-gradient(#e7ddd5aa, #e7ddd5aa) right top / 24px 1px no-repeat, linear-gradient(#e7ddd5aa, #e7ddd5aa) right top / 1px 24px no-repeat, linear-gradient(#e7ddd5aa, #e7ddd5aa) left bottom / 24px 1px no-repeat, linear-gradient(#e7ddd5aa, #e7ddd5aa) left bottom / 1px 24px no-repeat, linear-gradient(#e7ddd5aa, #e7ddd5aa) right bottom / 24px 1px no-repeat, linear-gradient(#e7ddd5aa, #e7ddd5aa) right bottom / 1px 24px no-repeat; pointer-events: none; z-index: 2; }
+.inspection-caption { position: absolute; bottom: 23px; left: 28px; color: #f5eee5; z-index: 2; font-size: 10px; }
+.inspection-overlay { position: absolute; inset: 0; z-index: 3; background: #173d4325; animation: inspection-arrive .6s var(--ease); }
+.inspection-overlay::after { content: ""; position: absolute; top: 90px; bottom: 54px; width: 1px; background: #f0c18daa; box-shadow: -8px 0 22px 9px #f0c18d15; left: 5%; animation: inspection-sweep 1.6s var(--ease) both; pointer-events: none; }
+.inspection-route { position: absolute; inset: 0; width: 100%; height: 100%; fill: none; stroke: #f0c18d; stroke-width: 1; }
+.inspection-route path { stroke-dasharray: 3 5; opacity: .65; }
+.inspection-route circle { opacity: .38; stroke-dasharray: 2 7; }
+.inspection-point { position: absolute; display: flex; align-items: center; gap: 8px; padding: 0; border: 0; background: transparent; color: white; transform: translate(-50%, -50%); min-height: 44px; z-index: 2; }
+.point-refugios { left: 71%; top: 46%; }
+.point-accesos { left: 45%; top: 72%; }
+.point-humedad { left: 83%; top: 65%; }
+.point-number { width: 39px; height: 39px; display: grid; place-items: center; border: 1px solid #f0c18d; background: #173d43df; border-radius: 50%; font-size: 11px; font-variant-numeric: tabular-nums; flex: 0 0 39px; box-shadow: 0 0 0 6px #f0c18d17; }
+.point-name { font-size: 10px; line-height: 1.5; background: #102c32e8; padding: 5px 8px; border: 1px solid #f0c18d55; }
+.inspection-point:hover .point-number, .inspection-point[aria-pressed="true"] .point-number { background: #f0c18d; color: #102c32; }
+.inspection-point[aria-pressed="true"] .point-name { color: var(--signal); border-color: var(--signal); }
+.inspection-point:focus-visible { outline-color: var(--signal); outline-offset: 10px; }
+.inspection-detail { min-height: 170px; display: grid; grid-template-columns: 74px minmax(0, 1fr) 22px; gap: 20px; align-items: start; padding: 29px 30px; background: #102c32; }
+.inspection-index { font-size: 10px; line-height: 1.7; color: #d9c3a8; padding-top: 4px; font-variant-numeric: tabular-nums; }
+.inspection-detail h2 { font-size: 21px; line-height: 1.3; font-weight: 500; letter-spacing: -.025em; margin-bottom: 9px; }
+.inspection-detail p { color: #becfc6; font-size: 12px; line-height: 1.8; max-width: 410px; }
+.inspection-detail > .icon { color: #d9c3a8; width: 20px; height: 20px; flex-basis: 20px; margin-top: 3px; }
+.is-inspecting .inspection-detail { background: #14363b; }
+.trace-route { display: flex; align-items: center; gap: 30px; padding-block: 29px; }
+.trace-route a { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; padding-block: 10px; white-space: nowrap; }
+.trace-route a > span { font-size: 9px; color: #936342; font-variant-numeric: tabular-nums; }
+.trace-route a:hover { color: var(--copper); }
+.trace-connector { height: 1px; background: repeating-linear-gradient(90deg, #a3b2a6 0 2px, transparent 2px 7px); flex: 1; position: relative; }
+.trace-connector::after { content: ""; width: 5px; height: 5px; position: absolute; right: 0; top: -2px; border-top: 1px solid #a3b2a6; border-right: 1px solid #a3b2a6; transform: rotate(45deg); }
+
+/* The guide reads like a specimen plate, not a grid of sales cards. */
+.pest-guide { padding: 75px 0 35px; position: relative; background: #e7eae2; border-top: 1px solid #d6ddd3; border-bottom: 1px solid #d6ddd3; }
+.guide-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 40px; }
+.guide-heading h2 { font-size: clamp(36px, 4vw, 55px); font-weight: 500; }
+.guide-heading > p { font-size: 13px; line-height: 1.9; color: var(--muted); padding-bottom: 4px; }
+.pest-tabs { display: grid; grid-template-columns: repeat(4, 1fr); border-block: 1px solid #bcc9bf; }
+.pest-tabs button { min-width: 0; border: 0; background: transparent; display: flex; align-items: center; padding: 13px 18px; gap: 13px; text-align: left; font-size: 13px; font-weight: 600; position: relative; }
+.pest-tabs button + button { border-left: 1px solid #bcc9bf; }
+.pest-tabs button::after { content: ""; position: absolute; bottom: -1px; left: 0; right: 0; height: 3px; background: var(--copper); transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease); }
+.pest-tabs button[aria-selected="true"] { background: #f4f4ed; }
+.pest-tabs button[aria-selected="true"]::after { transform: scaleX(1); }
+.pest-tabs button:hover { background: #f4f4ed; }
+.pest-tabs img { width: 65px; height: 54px; object-fit: contain; mix-blend-mode: multiply; }
+.pest-tabs .icon { width: 17px; height: 17px; flex-basis: 17px; margin-left: auto; color: var(--copper); opacity: .5; }
+.pest-tabs button[aria-selected="true"] .icon { opacity: 1; }
+.pest-panel { display: grid; grid-template-columns: 1.04fr 1fr; gap: 70px; align-items: center; padding-block: 45px 40px; min-height: 510px; }
+.specimen-plate { position: relative; min-width: 0; aspect-ratio: 1.13; isolation: isolate; display: flex; flex-direction: column; border: 1px solid #c0cbc1; background: #eef0e8; overflow: hidden; }
+.specimen-plate::before { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .6; background-image: radial-gradient(#9cae9d 0.65px, transparent .65px); background-size: 17px 17px; }
+.specimen-plate-top { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 18px 22px; font-size: 9px; color: #526756; z-index: 1; }
+.specimen-plate-top > :first-child { background: #eef0e8; }
+.specimen-orbit { position: absolute; top: 50%; left: 50%; width: 72%; aspect-ratio: 1; border: 1px solid #afc0ae; border-radius: 50%; transform: translate(-50%, -50%); z-index: -1; background: #eef0e885; }
+.specimen-orbit::after { content: ""; position: absolute; inset: 12%; border: 1px dashed #b6c6b2; border-radius: 50%; }
+.specimen-crosshair { position: absolute; inset: 15% 10%; z-index: -1; background: linear-gradient(#a8b9a8, #a8b9a8) center / 1px 100% no-repeat, linear-gradient(#a8b9a8, #a8b9a8) center / 100% 1px no-repeat; opacity: .55; }
+.specimen-image { width: 100%; height: auto; min-height: 0; flex: 1; object-fit: contain; margin-block: -25px; animation: specimen-enter .65s var(--ease); }
+.specimen-plate figcaption { font-size: 9px; color: #526756; display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 13px 22px; z-index: 1; margin-top: auto; }
+.specimen-ruler { display: block; width: 70px; height: 7px; border-bottom: 1px solid #647c64; background: repeating-linear-gradient(90deg, #647c64 0 1px, transparent 1px 7px); }
+.pest-dossier { padding-right: 15px; animation: panel-enter .4s var(--ease); }
+.dossier-type { font-size: 11px; color: #8d5133; }
+.pest-dossier h3 { font-size: clamp(30px, 3vw, 42px); line-height: 1.1; font-weight: 500; letter-spacing: -.04em; margin: 16px 0 20px; max-width: 420px; }
+.pest-dossier > p { max-width: 430px; font-size: 13px; line-height: 1.9; color: var(--muted); }
+.pest-dossier dl { margin: 25px 0 20px; }
+.pest-dossier dl > div { border-top: 1px solid #bdc9bf; padding-block: 13px; display: grid; grid-template-columns: 95px 1fr; gap: 20px; }
+.pest-dossier dt { font-size: 10px; font-weight: 650; color: #3e5e53; }
+.pest-dossier dd { margin: 0; font-size: 11px; line-height: 1.8; color: var(--muted); }
+.pest-dossier .text-link { color: #874721; font-size: 13px; }
+.field-source { display: block; font-size: 9px; color: #526756; width: fit-content; padding-block: 9px; margin-top: 2px; }
+.field-source:hover { color: #173746; text-decoration: underline; text-underline-offset: 4px; }
+.guide-foot { display: flex; justify-content: space-between; align-items: center; gap: 30px; font-size: 11px; padding-top: 20px; border-top: 1px solid #bcc9bf; }
+.guide-foot .text-link { font-size: 11px; }
+.guide-foot p { color: var(--muted); }
+
+/* Carry the visual language into the existing service and contact flow. */
+.services-section { padding-top: 95px; }
+.services-section .section-heading { align-items: flex-end; }
+.services-section .section-heading h2 { max-width: 650px; }
+.service-tabs { background: transparent; border-bottom: 1px solid var(--line); border-radius: 0; padding: 0; gap: 0; }
+.service-tabs button { border-radius: 0; border-right: 1px solid var(--line); min-height: 66px; }
+.service-tabs button:last-child { border-right: 0; }
+.service-tabs button:hover { background: #e1e7df; }
+.service-tabs button[aria-selected="true"] { background: var(--blue); }
+.service-photo { border-radius: 2px 30px 2px 2px; }
+.photo-tag { border-radius: 2px; }
+.service-content h3 { font-family: var(--display); font-weight: 500; }
+.pest-tags span { border-radius: 2px; background: #e7ebe2; }
+.company-section { background: #dfe6dc; }
+.company-intro h2 { font-size: clamp(40px, 4.3vw, 60px); }
+.company-values article { border-color: #becbbf; }
+.company-values h3 { font-size: 23px; }
+.value-icon { border-radius: 0; background: transparent; border: 1px solid #b0c1b1; position: relative; }
+.value-icon::before, .value-icon::after { content: ""; position: absolute; width: 7px; height: 7px; background: #dfe6dc; }
+.value-icon::before { left: -2px; bottom: -2px; border-left: 1px solid #b0c1b1; border-bottom: 1px solid #b0c1b1; }
+.value-icon::after { right: -2px; top: -2px; border-right: 1px solid #b0c1b1; border-top: 1px solid #b0c1b1; }
+.process-number { border: 1px solid #aabcae; background: transparent; border-radius: 0; color: var(--blue); }
+.process-list li:not(:last-child)::after { background: repeating-linear-gradient(90deg, #9bad9c 0 2px, transparent 2px 7px); }
+.results-card { background: #dfe5d9; border-radius: 0 45px 0 0; }
+.results-photo figcaption { font-family: var(--display); font-size: 30px; }
+.quote-section { background: #173d43; }
+.quote-intro h2 { font-size: clamp(50px, 5vw, 73px); line-height: 1.03; }
+.quote-intro .section-label { color: #e7c6a1; }
+.quote-intro > p:not(.section-label), .quote-assurance p { color: #d0dcd4; }
+.quote-assurance .icon { color: #e7c6a1; }
+.quote-box { border-radius: 2px; background: #fbfcf7; }
+.quote-decoration { opacity: .55; }
+.quote-decoration svg { stroke: #d2b190; }
+.quote-progress { background: #e1e7df; }
+.space-option { border-radius: 2px; }
+.space-option:hover { background: #f1f5ed; border-color: #8ea58d; }
+.space-option:has(input:checked) { background: #e7eee2; border-color: var(--blue); }
+.field input, .field select, .field textarea { border-radius: 2px; border-color: #b8c5ba; }
+.privacy-note, .contact-pending { border-radius: 2px; background: #edf1e7; color: #4c6354; }
+.contact-icon { background: #e0e7db; border-radius: 0; }
+.zone-tags span { background: #e0e7db; color: #455e4e; border-radius: 2px; }
+.site-footer { background: #dde4d8; }
+.footer-top { padding-block: 10px 35px; }
+.footer-top .brand { font-size: 65px; }
+.footer-top .brand-mark { width: 50px; height: 50px; }
+.footer-top > p { color: #536757; }
+.footer-bottom { border-color: #bdcab9; }
+.back-top span { background: #eff2e9; }
+
+@keyframes inspection-arrive { from { opacity: 0; } to { opacity: 1; } }
+@keyframes inspection-sweep { from { transform: translateX(0); opacity: .8; } to { transform: translateX(550px); opacity: 0; } }
+@keyframes specimen-enter { from { opacity: 0; transform: translateY(12px) rotate(-3deg); } to { opacity: 1; transform: translateY(0) rotate(0); } }
+
+@media (min-width: 1600px) { .experience-intro { padding-left: 90px; } }
+@media (max-width: 1150px) {
+  .site-nav { gap: 19px; font-size: 12px; }
+  .experience-intro { padding: 54px 34px 24px 40px; }
+  .experience-intro h1 { font-size: 68px; }
+  .experience-lead { font-size: 13px; }
+  .experience-foot { padding-top: 42px; }
+  .inspection-image { height: 500px; }
+  .inspection-detail { padding: 25px; gap: 15px; grid-template-columns: 58px 1fr; min-height: 180px; }
+  .inspection-detail > .icon { display: none; }
+  .inspection-detail h2 { font-size: 19px; }
+  .inspection-detail p { font-size: 11px; }
+  .point-name { font-size: 9px; padding: 4px 6px; }
+  .point-humedad { left: 79%; }
+  .pest-panel { gap: 42px; }
+  .pest-tabs button { padding: 12px; gap: 9px; font-size: 12px; }
+  .pest-tabs img { width: 52px; height: 46px; }
+  .pest-dossier { padding-right: 0; }
+  .pest-dossier dl > div { gap: 15px; grid-template-columns: 85px 1fr; }
+}
+@media (max-width: 900px) {
+  .header-inner { height: 78px; }
+  .site-nav { background: var(--paper); }
+  .experience-hero { grid-template-columns: .95fr 1.05fr; }
+  .experience-intro { padding: 43px 27px 22px 32px; }
+  .experience-location { align-items: flex-start; font-size: 10px; max-width: 210px; }
+  .experience-intro h1 { font-size: 53px; margin-top: 35px; }
+  .experience-lead { font-size: 12px; }
+  .experience-lead br { display: none; }
+  .inspection-activate { font-size: 10px; gap: 9px; padding-inline: 13px; min-height: 51px; }
+  .inspection-activate .icon { width: 17px; height: 17px; flex-basis: 17px; }
+  .experience-quote { font-size: 10px; gap: 10px; }
+  .experience-quote .icon { flex-shrink: 0; }
+  .experience-foot { flex-wrap: wrap; gap: 5px; font-size: 9px; padding-top: 35px; }
+  .inspection-image { height: 440px; }
+  .inspection-topbar { top: 17px; left: 17px; right: 17px; gap: 8px; }
+  .inspection-topbar > span { font-size: 8px; padding: 6px; }
+  .inspection-video { font-size: 8px; padding: 7px; }
+  .inspection-video [data-video-label] { display: none; }
+  .inspection-video { width: 38px; justify-content: center; }
+  .inspection-corners { inset: 72px 18px 50px; }
+  .point-name { position: absolute; top: calc(100% + 6px); left: 50%; transform: translateX(-50%); }
+  .point-number { width: 34px; height: 34px; flex-basis: 34px; font-size: 10px; }
+  .point-humedad { left: 83%; }
+  .inspection-detail { padding: 23px; grid-template-columns: 1fr; gap: 9px; min-height: 200px; }
+  .inspection-index { padding: 0; font-size: 9px; }
+  .inspection-detail h2 { margin-bottom: 7px; }
+  .trace-route { gap: 17px; padding-block: 24px; }
+  .trace-route a { font-size: 10px; gap: 9px; }
+  .pest-guide { padding-top: 65px; }
+  .guide-heading h2 { font-size: 41px; }
+  .guide-heading > p { font-size: 11px; max-width: 195px; }
+  .pest-tabs button { flex-wrap: wrap; gap: 0; justify-content: center; font-size: 11px; }
+  .pest-tabs img { width: 60px; height: 49px; }
+  .pest-tabs button > span { text-align: center; width: 100%; }
+  .pest-tabs .icon { display: none; }
+  .pest-panel { gap: 30px; min-height: 465px; }
+  .specimen-plate { aspect-ratio: .85; }
+  .specimen-plate-top { font-size: 8px; padding: 15px; gap: 12px; }
+  .specimen-image { width: 120%; max-width: none; margin-inline: -10%; }
+  .specimen-plate figcaption { font-size: 8px; padding: 15px; }
+  .specimen-ruler { width: 38px; flex: 0 0 38px; }
+  .pest-dossier h3 { font-size: 31px; }
+  .pest-dossier > p { font-size: 12px; }
+  .pest-dossier dl > div { grid-template-columns: 1fr; gap: 5px; padding-block: 10px; }
+  .guide-foot { gap: 25px; }
+  .guide-foot .text-link { font-size: 10px; white-space: nowrap; }
+  .guide-foot p { font-size: 10px; }
+  .company-values h3 { font-size: 20px; }
+  .quote-intro h2 { font-size: 48px; }
+}
+@media (max-width: 650px) {
+  .header-inner { height: 72px; }
+  .brand { font-size: 35px; }
+  .brand-mark { width: 31px; height: 31px; }
+  .experience-hero { grid-template-columns: 1fr; }
+  .experience-intro { padding: 35px 25px 20px; }
+  .hero-backdrop::after { background: linear-gradient(180deg, #102c32dc 0%, #102c32a6 46%, #102c32d4 100%); }
+  .hero-backdrop img, .hero-backdrop video { object-position: 74% 42%; }
+  .experience-location { max-width: none; font-size: 10px; }
+  .experience-intro h1 { font-size: clamp(55px, 14vw, 78px); line-height: 1.01; margin: 30px 0 21px -2px; max-width: 500px; }
+  .experience-lead { max-width: 360px; font-size: 13px; line-height: 1.85; }
+  .experience-actions { margin-top: 24px; gap: 10px; }
+  .inspection-activate { min-height: 51px; font-size: 12px; padding: 14px 18px; gap: 12px; }
+  .experience-quote { font-size: 10px; }
+  .experience-foot { flex-wrap: nowrap; padding-top: 27px; font-size: 9px; gap: 15px; }
+  .hero-watermark { bottom: -56px; left: -5px; font-size: 235px; }
+  .inspection-image { height: 350px; }
+  .inspection-image > img, .inspection-image > video { object-position: center; }
+  .inspection-topbar { top: 17px; left: 20px; right: 20px; }
+  .inspection-topbar > span { font-size: 9px; padding: 7px 8px; }
+  .inspection-video [data-video-label] { display: inline; }
+  .inspection-video { width: auto; min-height: 38px; padding-inline: 10px; }
+  .inspection-corners { inset: 72px 20px 48px; }
+  .inspection-caption { left: 22px; bottom: 19px; font-size: 9px; }
+  .inspection-detail { grid-template-columns: 52px 1fr; gap: 15px; padding: 23px 23px 26px; min-height: 155px; }
+  .inspection-index { padding-top: 3px; }
+  .inspection-detail h2 { font-size: 19px; }
+  .inspection-detail p { font-size: 11px; line-height: 1.85; }
+  .point-number { width: 35px; height: 35px; flex-basis: 35px; }
+  .trace-route { width: calc(100% - 44px); gap: 10px; padding-block: 19px; }
+  .trace-route a { flex-direction: column; align-items: flex-start; gap: 4px; font-size: 9px; white-space: normal; }
+  .trace-route a > span { font-size: 8px; }
+  .trace-connector { min-width: 15px; }
+  .pest-guide { padding-top: 56px; padding-bottom: 25px; }
+  .guide-heading { display: block; margin-bottom: 28px; }
+  .guide-heading h2 { font-size: 36px; }
+  .guide-heading > p { font-size: 12px; max-width: none; margin-top: 20px; }
+  .guide-heading > p br { display: none; }
+  .pest-tabs { margin-inline: -3px; }
+  .pest-tabs button { padding: 8px 3px 10px; font-size: 9px; }
+  .pest-tabs img { width: 58px; height: 49px; }
+  .pest-panel { grid-template-columns: 1fr; gap: 28px; padding-block: 25px 30px; min-height: 0; }
+  .specimen-plate { aspect-ratio: 1.08; }
+  .specimen-plate-top { font-size: 9px; padding: 15px 17px; }
+  .specimen-image { width: 100%; max-width: 100%; margin-inline: 0; margin-block: -28px; }
+  .specimen-plate figcaption { font-size: 8px; padding: 15px 17px; }
+  .specimen-ruler { width: 55px; flex-basis: 55px; }
+  .pest-dossier { padding-inline: 4px; }
+  .pest-dossier h3 { font-size: 33px; margin-top: 14px; }
+  .pest-dossier > p { font-size: 13px; max-width: none; }
+  .pest-dossier dl { margin-block: 22px 16px; }
+  .pest-dossier dl > div { grid-template-columns: 80px 1fr; gap: 17px; padding-block: 13px; }
+  .pest-dossier dt { font-size: 10px; }
+  .pest-dossier dd { font-size: 11px; }
+  .pest-dossier .text-link { font-size: 13px; }
+  .field-source { font-size: 9px; }
+  .guide-foot { display: block; padding-top: 22px; }
+  .guide-foot p { font-size: 11px; }
+  .guide-foot .text-link { font-size: 11px; white-space: normal; margin-top: 7px; }
+  .services-section { padding-top: 64px; }
+  .services-section h2 { font-size: 35px; }
+  .service-tabs button { border-bottom: 1px solid var(--line); min-height: 58px; }
+  .service-tabs button:nth-child(2) { border-right: 0; }
+  .service-photo { border-radius: 2px 25px 2px 2px; }
+  .company-intro h2 { font-size: 40px; }
+  .company-values h3 { font-size: 20px; }
+  .value-icon { width: 39px; height: 39px; flex-basis: 39px; }
+  .results-card { border-radius: 0 30px 0 0; }
+  .results-photo figcaption { font-size: 28px; }
+  .quote-intro h2 { font-size: 57px; max-width: 400px; }
+  .quote-intro h2 br:nth-child(2) { display: initial; }
+  .quote-box { border-radius: 2px; }
+  .contact-main h2 { font-size: 36px; }
+  .footer-top .brand { font-size: 54px; }
+  .footer-top .brand-mark { width: 42px; height: 42px; }
+}
+@media (max-width: 360px) {
+  .experience-intro { padding-inline: 22px; }
+  .experience-intro h1 { font-size: 53px; }
+  .experience-lead { font-size: 12px; }
+  .inspection-detail { padding-inline: 20px; grid-template-columns: 45px 1fr; gap: 13px; }
+  .inspection-detail h2 { font-size: 17px; }
+  .inspection-detail p { font-size: 10px; }
+  .trace-route a { font-size: 8px; }
+  .guide-heading h2 { font-size: 32px; }
+  .pest-tabs button { font-size: 8px; }
+  .pest-tabs img { width: 49px; height: 44px; }
+  .specimen-plate figcaption { gap: 8px; font-size: 7px; }
+  .pest-dossier h3 { font-size: 30px; }
+  .quote-intro h2 { font-size: 50px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .inspection-overlay, .inspection-overlay::after, .specimen-image, .pest-dossier { animation: none; }
+  .inspection-overlay::after { display: none; }
+  .hero-backdrop video { display: none; }
+}

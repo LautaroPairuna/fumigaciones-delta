@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Traza · Fumigaciones y control de plagas</title>
+  <meta name="description" content="Fumigaciones y control de cucarachas, hormigas, roedores y mosquitos para hogares, consorcios y comercios en CABA y GBA. Prepará tu consulta por WhatsApp.">
+  <meta name="theme-color" content="#f1f5df">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23277b37'/%3E%3Cpath d='M11 12h18M20 12v17M12 21v8h8' fill='none' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;650;700;750;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="media/inicio-fondo-poster.jpg">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/experience.css">
+  <link rel="stylesheet" href="css/commercial.css">
+  <link rel="stylesheet" href="css/refresh.css">
+  <link rel="stylesheet" href="css/redesign.css?v=11">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script src="js/main.js?v=10" defer></script>
+  </head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-diagonal" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7M5 9v12h14V9M9 21v-8h6v8"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M5 21V3h14v18M3 21h18M9 7h1m4 0h1M9 11h1m4 0h1M9 15h1m4 0h1M10 21v-3h4v3"/></symbol>
+    <symbol id="i-shop" viewBox="0 0 24 24"><path d="M4 10v11h16V10M3 10l2-7h14l2 7M3 10c0 4 5 4 5 0 0 4 8 4 8 0 0 4 5 4 5 0M9 21v-6h6v6"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 3C8 2 2 8 5 15c3 7 15 3 15-12ZM4 21 15 10M8 17v-5m0 5h5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="i-hygiene" viewBox="0 0 24 24"><path d="M12 3.2c2.6 3.5 5.8 6.6 5.8 10a5.8 5.8 0 0 1-11.6 0c0-3.4 3.2-6.5 5.8-10Z"/><path d="M9.2 14.4a3.1 3.1 0 0 0 2.5 1.5"/></symbol>
+    <symbol id="i-tools" viewBox="0 0 24 24"><path d="M8.6 9.4h6.8l.7 10.2H7.9l.7-10.2Z"/><path d="M10.2 9.4V6.3a1.8 1.8 0 0 1 3.6 0v3.1"/><path d="M12 4.5V2.8M9.8 13.4h4.4"/></symbol>
+    <symbol id="i-van" viewBox="0 0 24 24"><path d="M3 16V9.2A1.2 1.2 0 0 1 4.2 8H13v4h5.1a2 2 0 0 1 1.6.8l1.6 2.1c.2.3.3.6.3.9V16"/><path d="M3 16h18"/><circle cx="7.2" cy="16.8" r="1.6"/><circle cx="16.8" cy="16.8" r="1.6"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3"/></symbol>
+    <symbol id="i-document" viewBox="0 0 24 24"><path d="M14 3H5v18h14V8l-5-5Zm0 0v5h5M9 12h6m-6 4h6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11a9 9 0 0 1-13 8l-5 2 1-5a9 9 0 1 1 17-5Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M12 20.5a8.5 8.5 0 0 1-7.3-4.2L3.2 20.8l4.6-1.2A8.5 8.5 0 1 1 12 20.5Z"/><path d="M8.7 10.4c.2 1.7 1.6 3.1 3.3 3.4.5.1.9 0 1.2-.3l.6-.6"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.2" cy="6.9" r=".8"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 21v-7h2.4l.5-3H14V9.1c0-.8.2-1.4 1.5-1.4H18V5h-2.3C12.8 5 11.5 6.4 11.5 8.8V11H9v3h2.5v7"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="m4.5 7.5 7.5 5.5L19.5 7.5"/></symbol>
+  </defs></svg>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#inicio" aria-label="Traza, ir al inicio" translate="no"><svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect width="40" height="40" rx="12" fill="currentColor"/><path d="M11 12h18M20 12v17M12 21v8h8" stroke="white" stroke-width="2.7" stroke-linecap="round"/></svg><span>traza<span class="brand-dot">.</span></span></a>
+      <nav class="site-nav" id="site-nav" aria-label="Navegación principal"><div class="nav-links"><a href="#inicio">Inicio</a><a href="#metodo">Método</a><a href="#cobertura">Cobertura</a><a href="#cotizar">Contacto</a></div><a class="button button-small nav-cta" href="#cotizar">Pedir presupuesto<svg class="icon" aria-hidden="true"><use href="#i-diagonal"/></svg></a></nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú"><span></span><span></span></button>
+    </div><div class="reading-progress" aria-hidden="true"><span data-scroll-progress></span></div>
+  </header>
+  <main id="contenido" tabindex="-1">
+    <section class="experience-hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-backdrop" aria-hidden="true">
+        <img src="media/inicio-fondo-poster.jpg" alt="" width="1280" height="720" fetchpriority="high">
+        <video id="hero-backdrop-video" muted loop playsinline preload="none" poster="media/inicio-fondo-poster.jpg" tabindex="-1"><source data-src="media/inicio-fondo.mp4" type="video/mp4"></video>
+      </div>
+      <div class="hero-copy container">
+        <h1 id="hero-title">Volvé a sentir<br> tu espacio propio.</h1>
+        <p class="experience-lead">Detectamos el problema, tratamos el foco y te ayudamos a prevenirlo.</p>
+        <div class="experience-actions"><a href="#cotizar" class="button hero-primary">Pedir presupuesto<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      </div>
+    </section>
+    <section class="method-new" id="metodo" aria-labelledby="method-title"><div class="container"><div class="method-head"><div class="method-intro"><h2 id="method-title">Un plan claro para<br>cada espacio.</h2></div></div><div class="work-grid" data-reveal>
+        <figure class="work-shot work-shot-inspeccion">
+          <div class="work-photo"><img src="media/paso-inspeccion.jpg" alt="Técnico y clienta agachados en la cocina, revisando el zócalo con una linterna." width="864" height="1152" loading="lazy"></div>
+          <figcaption><span>01</span><div><strong>Inspección</strong><p>Recorremos el lugar con vos y marcamos el foco. Antes de aplicar nada, vemos de dónde viene.</p></div></figcaption>
+        </figure>
+        <figure class="work-shot work-shot-tratamiento">
+          <div class="work-photo"><img src="media/paso-tratamiento.jpg" alt="Técnico con equipo de protección aplicando gel puntual en el zócalo de una cocina." width="864" height="1152" loading="lazy"></div>
+          <figcaption><span>02</span><div><strong>Tratamiento</strong><p>Aplicamos solo en el punto que hace falta. No es tirar producto y irse: es resolverlo de raíz.</p></div></figcaption>
+        </figure>
+        <figure class="work-shot work-shot-seguimiento">
+          <div class="work-photo"><img src="media/paso-seguimiento.jpg" alt="Técnico con el teléfono, coordinando el seguimiento con la clienta en la cocina." width="864" height="1152" loading="lazy"></div>
+          <figcaption><span>03</span><div><strong>Seguimiento</strong><p>Quedamos en contacto después. Volvemos a mirar y ajustamos hasta que quede resuelto.</p></div></figcaption>
+        </figure>
+      </div></div></section>
+
+    <section class="house" id="cobertura" aria-labelledby="coverage-title">
+      <div class="review-rail">
+        <div class="score-chip" role="img" aria-label="Puntuación 4,8 de 5 en reseñas de Google. Excelente.">
+          <div class="score-seal" aria-hidden="true">
+            <div class="score-seal-inner"><strong>4,8</strong></div>
+          </div>
+          <div class="score-aside" aria-hidden="true">
+            <span class="google-lockup"><svg class="google-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>Google</span>
+            <span class="stars" style="--score: 4.8"></span>
+            <em>Excelente</em>
+          </div>
+        </div>
+        <div class="review-viewport" tabindex="0" role="region" aria-label="Reseñas de clientes">
+          <div class="review-track">
+            <div class="review-set"><article class="review-card"><span class="stars" style="--score: 5" role="img" aria-label="5 de 5"></span><p>Entraron, marcaron el foco y a los días no veíamos más cucarachas.</p><span class="who">Camila, Almagro</span></article><article class="review-card"><span class="stars" style="--score: 5" role="img" aria-label="5 de 5"></span><p>En el consorcio coordinaron con el encargado y dejaron el parte.</p><span class="who">Martín, Caballito</span></article><article class="review-card"><span class="stars" style="--score: 4" role="img" aria-label="4 de 5"></span><p>El local siguió abierto. Vinieron fuera del horario de cocina.</p><span class="who">Diego, Quilmes</span></article><article class="review-card"><span class="stars" style="--score: 5" role="img" aria-label="5 de 5"></span><p>Ratas en el depósito. Volvieron a controlar y quedó resuelto.</p><span class="who">Pablo, La Matanza</span></article><article class="review-card"><span class="stars" style="--score: 5" role="img" aria-label="5 de 5"></span><p>Explicaron qué no tocar ese día. El departamento quedó habitable.</p><span class="who">Laura, San Isidro</span></article><article class="review-card"><span class="stars" style="--score: 5" role="img" aria-label="5 de 5"></span><p>Puntuales, y la casa no quedó con olor.</p><span class="who">Sofía, Palermo</span></article><article class="review-card" aria-hidden="true"><span class="stars" style="--score: 5" role="img" aria-label="5 de 5"></span><p>Entraron, marcaron el foco y a los días no veíamos más cucarachas.</p><span class="who">Camila, Almagro</span></article><article class="review-card" aria-hidden="true"><span class="stars" style="--score: 5" role="img" aria-label="5 de 5"></span><p>En el consorcio coordinaron con el encargado y dejaron el parte.</p><span class="who">Martín, Caballito</span></article><article class="review-card" aria-hidden="true"><span class="stars" style="--score: 4" role="img" aria-label="4 de 5"></span><p>El local siguió abierto. Vinieron fuera del horario de cocina.</p><span class="who">Diego, Quilmes</span></article><article class="review-card" aria-hidden="true"><span class="stars" style="--score: 5" role="img" aria-label="5 de 5"></span><p>Ratas en el depósito. Volvieron a controlar y quedó resuelto.</p><span class="who">Pablo, La Matanza</span></article><article class="review-card" aria-hidden="true"><span class="stars" style="--score: 5" role="img" aria-label="5 de 5"></span><p>Explicaron qué no tocar ese día. El departamento quedó habitable.</p><span class="who">Laura, San Isidro</span></article><article class="review-card" aria-hidden="true"><span class="stars" style="--score: 5" role="img" aria-label="5 de 5"></span><p>Puntuales, y la casa no quedó con olor.</p><span class="who">Sofía, Palermo</span></article></div>
+            <div class="review-set" aria-hidden="true"><article class="review-card" aria-hidden="true"><span class="stars" style="--score: 5" role="img" aria-label="5 de 5"></span><p>Entraron, marcaron el foco y a los días no veíamos más cucarachas.</p><span class="who">Camila, Almagro</span></article><article class="review-card" aria-hidden="true"><span class="stars" style="--score: 5" role="img" aria-label="5 de 5"></span><p>En el consorcio coordinaron con el encargado y dejaron el parte.</p><span class="who">Martín, Caballito</span></article><article class="review-card" aria-hidden="true"><span class="stars" style="--score: 4" role="img" aria-label="4 de 5"></span><p>El local siguió abierto. Vinieron fuera del horario de cocina.</p><span class="who">Diego, Quilmes</span></article><article class="review-card" aria-hidden="true"><span class="stars" style="--score: 5" role="img" aria-label="5 de 5"></span><p>Ratas en el depósito. Volvieron a controlar y quedó resuelto.</p><span class="who">Pablo, La Matanza</span></article><article class="review-card" aria-hidden="true"><span class="stars" style="--score: 5" role="img" aria-label="5 de 5"></span><p>Explicaron qué no tocar ese día. El departamento quedó habitable.</p><span class="who">Laura, San Isidro</span></article><article class="review-card" aria-hidden="true"><span class="stars" style="--score: 5" role="img" aria-label="5 de 5"></span><p>Puntuales, y la casa no quedó con olor.</p><span class="who">Sofía, Palermo</span></article><article class="review-card" aria-hidden="true"><span class="stars" style="--score: 5" role="img" aria-label="5 de 5"></span><p>Entraron, marcaron el foco y a los días no veíamos más cucarachas.</p><span class="who">Camila, Almagro</span></article><article class="review-card" aria-hidden="true"><span class="stars" style="--score: 5" role="img" aria-label="5 de 5"></span><p>En el consorcio coordinaron con el encargado y dejaron el parte.</p><span class="who">Martín, Caballito</span></article><article class="review-card" aria-hidden="true"><span class="stars" style="--score: 4" role="img" aria-label="4 de 5"></span><p>El local siguió abierto. Vinieron fuera del horario de cocina.</p><span class="who">Diego, Quilmes</span></article><article class="review-card" aria-hidden="true"><span class="stars" style="--score: 5" role="img" aria-label="5 de 5"></span><p>Ratas en el depósito. Volvieron a controlar y quedó resuelto.</p><span class="who">Pablo, La Matanza</span></article><article class="review-card" aria-hidden="true"><span class="stars" style="--score: 5" role="img" aria-label="5 de 5"></span><p>Explicaron qué no tocar ese día. El departamento quedó habitable.</p><span class="who">Laura, San Isidro</span></article><article class="review-card" aria-hidden="true"><span class="stars" style="--score: 5" role="img" aria-label="5 de 5"></span><p>Puntuales, y la casa no quedó con olor.</p><span class="who">Sofía, Palermo</span></article></div>
+          </div>
+        </div>
+      </div>
+      <div class="house-body">
+        <div class="house-main">
+          <div class="house-copy">
+            <h2 id="coverage-title">Cobertura y<br>área de servicio.</h2>
+            <p>Hogares, consorcios y comercios en CABA y 24 partidos del GBA. Confirmamos el barrio antes de coordinar la visita.</p>
+            <p class="coverage-key"><span aria-hidden="true"></span>Zona de cobertura</p>
+            <ul class="house-assurances">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><div><strong>Medidas de seguridad</strong><span>Protección en la visita y aplicación controlada.</span></div></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-hygiene"/></svg><div><strong>Higiene</strong><span>El lugar queda habitable, sin un olor que se quede.</span></div></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-tools"/></svg><div><strong>Instrumentos profesionales</strong><span>Gel, estaciones y equipos según el foco.</span></div></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-van"/></svg><div><strong>Transporte propio</strong><span>Servicio a domicilio con movilidad de la empresa.</span></div></li>
+            </ul>
+            <a class="house-link" href="#cotizar">Cotizar para mi zona</a>
+          </div>
+          <div class="coverage-map" id="coverage-map" role="img" aria-label="Mapa de Buenos Aires. La zona de cobertura, CABA y el Gran Buenos Aires, está marcada en verde.">
+            <p class="coverage-fallback">CABA y 24 partidos del Gran Buenos Aires.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-section" id="cotizar" aria-labelledby="quote-title">
+      <div class="container quote-layout">
+        <div class="quote-intro">
+          <h2 id="quote-title">Escribinos.</h2>
+          <p>El cotizador arma el mensaje con tu nombre, qué está pasando y la dirección. Si preferís otro canal, elegí uno.</p>
+          <div class="channel-row">
+            <a class="channel channel-whatsapp" data-channel="whatsapp" href="https://wa.me/?text=Hola%20Traza.%20Quiero%20consultar%20por%20un%20servicio." target="_blank" rel="noopener noreferrer"><svg class="icon channel-mark" aria-hidden="true"><use href="#i-whatsapp"/></svg><span class="channel-copy"><strong>WhatsApp</strong><small>Consulta o presupuesto por mensaje.</small></span><svg class="icon channel-go" aria-hidden="true"><use href="#i-diagonal"/></svg></a>
+            <a class="channel channel-instagram" data-channel="instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><svg class="icon channel-mark" aria-hidden="true"><use href="#i-instagram"/></svg><span class="channel-copy"><strong>Instagram</strong><small>Escribinos o mandá fotos del lugar.</small></span><svg class="icon channel-go" aria-hidden="true"><use href="#i-diagonal"/></svg></a>
+            <a class="channel channel-facebook" data-channel="facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><svg class="icon channel-mark" aria-hidden="true"><use href="#i-facebook"/></svg><span class="channel-copy"><strong>Facebook</strong><small>Mensaje a la página.</small></span><svg class="icon channel-go" aria-hidden="true"><use href="#i-diagonal"/></svg></a>
+            <a class="channel channel-gmail" data-channel="gmail" href="mailto:?subject=Consulta%20Traza&amp;body=Hola%20Traza.%20Quiero%20consultar%20por%20un%20servicio."><svg class="icon channel-mark" aria-hidden="true"><use href="#i-mail"/></svg><span class="channel-copy"><strong>Gmail</strong><small>Contanos el caso por correo.</small></span><svg class="icon channel-go" aria-hidden="true"><use href="#i-diagonal"/></svg></a>
+          </div>
+          <p class="quote-note">Hogares, consorcios y comercios en CABA y GBA.</p>
+        </div>
+        <div class="wa-shell"><div class="wa-chat" role="region" aria-label="Cotizador de Traza">
+          <div class="wa-header"><span class="wa-avatar" aria-hidden="true"><svg class="brand-mark" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="12" fill="currentColor"/><path d="M11 12h18M20 12v17M12 21v8h8" stroke="white" stroke-width="2.7" stroke-linecap="round"/></svg></span><span class="wa-contact"><strong>COTIZADOR</strong><small><span class="wa-online" aria-hidden="true"></span>En línea</small></span></div>
+          <div class="wa-conversation" id="wa-conversation" aria-live="polite" aria-relevant="additions text">
+            <span class="wa-day">Hoy</span>
+            <p class="wa-encryption">Queda en tu dispositivo hasta que confirmás el envío por WhatsApp.</p>
+            <div class="wa-brief">
+              <p>Cuatro datos y armamos el presupuesto.</p>
+              <ol>
+                <li><span>01</span>Tu nombre o el de la empresa</li>
+                <li><span>02</span>Qué viste y en qué parte del lugar</li>
+                <li><span>03</span>Si es casa, consorcio o comercio</li>
+                <li><span>04</span>La dirección donde hace falta</li>
+              </ol>
+            </div>
+            <div class="wa-bubble wa-incoming"><span class="wa-sender">Cotizador</span>Hola. Empezamos por tu nombre. Si es una empresa, decinos cuál.<span class="wa-time">ahora</span></div>
+          </div>
+          <form id="quote-form" class="wa-composer" novalidate>
+            <label class="sr-only" for="wa-answer">Tu nombre o empresa</label>
+            <input id="wa-answer" name="respuesta" autocomplete="name" maxlength="120" placeholder="Escribí tu nombre o empresa…" aria-describedby="wa-error" required>
+            <button type="submit" aria-label="Enviar respuesta"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </form>
+          <p class="wa-error" id="wa-error" role="alert"></p>
+          <div class="wa-finish" id="wa-finish" hidden><a class="wa-action" data-quote-send href="https://wa.me/" target="_blank" rel="noopener noreferrer">Continuar en WhatsApp <svg class="icon" aria-hidden="true"><use href="#i-diagonal"/></svg></a><p data-contact-pending>El número de la empresa aún no está configurado; WhatsApp te pedirá elegir el contacto.</p><button type="button" data-quote-restart>Empezar otra consulta</button></div>
+          <noscript><p class="wa-noscript">Para iniciar la conversación, activá JavaScript.</p></noscript>
+        </div></div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-main">
+        <div class="footer-id">
+          <a class="brand" href="#inicio" aria-label="Traza, volver al inicio" translate="no"><svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect width="40" height="40" rx="12" fill="currentColor"/><path d="M11 12h18M20 12v17M12 21v8h8" stroke="white" stroke-width="2.7" stroke-linecap="round"/></svg><span>traza<span class="brand-dot">.</span></span></a>
+          <p>Fumigaciones en CABA y GBA.</p>
+        </div>
+        <div class="footer-actions">
+          <nav class="footer-nav" aria-label="Navegación del pie"><a href="#metodo">Método</a><a href="#cobertura">Cobertura</a><a href="#cotizar">Contacto</a></nav>
+          <nav class="footer-channels" aria-label="Canales">
+            <a data-channel="whatsapp" href="https://wa.me/?text=Hola%20Traza.%20Quiero%20consultar%20por%20un%20servicio." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+            <a data-channel="instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+            <a data-channel="facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg></a>
+            <a data-channel="gmail" href="mailto:?subject=Consulta%20Traza&amp;body=Hola%20Traza.%20Quiero%20consultar%20por%20un%20servicio." aria-label="Correo"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer-meta">
+        <p>© 2026 Traza</p>
+        <p>Imágenes ilustrativas.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
