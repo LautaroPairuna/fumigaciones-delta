@@ -5,5 +5,5 @@ export const channels = {
   whatsapp: whatsappUrl(site.whatsapp, site.greeting),
   instagram: site.instagram,
   phone: `tel:+${site.phone}`,
-  maps: site.maps,
+  coverage: "#cobertura",
 };

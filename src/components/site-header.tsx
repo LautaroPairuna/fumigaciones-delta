@@ -148,7 +148,12 @@ export function SiteHeader() {
           translate="no"
         >
           <img className="brand-mark" src="/media/delta-mark.webp" alt="" width={96} height={96} />
-          <span>DELTA</span>
+          <span className="flex flex-col items-start leading-none">
+            <span className="mb-[0.18em] text-[0.3em] font-extrabold tracking-[0.24em]">
+              FUMIGACIONES
+            </span>
+            <span>DELTA</span>
+          </span>
         </a>
         {/* biome-ignore lint/a11y/useKeyWithClickEvents: delegated handler for the anchors inside, which are keyboard-activated natively */}
         <nav

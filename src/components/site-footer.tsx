@@ -24,7 +24,12 @@ export function SiteFooter() {
                 height={96}
                 loading="lazy"
               />
-              <span>DELTA</span>
+              <span className="flex flex-col items-start leading-none">
+                <span className="mb-[0.18em] text-[0.3em] font-extrabold tracking-[0.24em]">
+                  FUMIGACIONES
+                </span>
+                <span>DELTA</span>
+              </span>
             </a>
             <p>Control de plagas urbanas en La Plata.</p>
           </div>
@@ -61,10 +66,9 @@ export function SiteFooter() {
                 <Icon name="phone" />
               </a>
               <a
-                data-channel="maps"
-                href={channels.maps}
-                {...external}
-                aria-label="Ubicación en Google Maps"
+                data-channel="coverage"
+                href={channels.coverage}
+                aria-label="Zona de cobertura: La Plata y alrededores"
               >
                 <Icon name="pin" />
               </a>

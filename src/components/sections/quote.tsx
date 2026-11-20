@@ -33,11 +33,11 @@ const items: {
     external: false,
   },
   {
-    kind: "maps",
+    kind: "coverage",
     icon: "pin",
-    title: "Calle 2 Nº 627",
-    text: "La Plata, Buenos Aires.",
-    external: true,
+    title: "La Plata y alrededores",
+    text: "Berisso, Ensenada y zonas cercanas.",
+    external: false,
   },
 ];
 

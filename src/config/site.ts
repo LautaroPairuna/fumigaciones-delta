@@ -9,13 +9,11 @@ export const site = {
   phone: "542215622173",
   phoneLabel: "0221 562-2173",
   address: {
-    street: "Calle 2 627",
     locality: "La Plata",
     region: "Buenos Aires",
     country: "AR",
   },
   areaServed: ["La Plata", "Berisso", "Ensenada"],
-  maps: "https://www.google.com/maps/search/?api=1&query=Calle+2+627%2C+La+Plata%2C+Buenos+Aires",
   coverage: "/data/coverage-delta.json",
   addressExample: "Ej.: Calle 12 1450, Tolosa",
   problemExample: "Ej.: Hay murciélagos en el techo de mi casa…",

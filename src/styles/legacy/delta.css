@@ -205,7 +205,7 @@ html.theme-delta .channel:hover { color: #fff; background: #3a1519; border-color
 html.theme-delta .channel-whatsapp:hover { background: #8e1016; color: #fff; }
 html.theme-delta .channel-instagram .channel-mark,
 html.theme-delta .channel-phone .channel-mark,
-html.theme-delta .channel-maps .channel-mark { color: #fff; }
+html.theme-delta .channel-coverage .channel-mark { color: #fff; }
 
 html.theme-delta .wa-chat { background: #f6f1ef; color: #1c1214; border-color: #f0d4d2; box-shadow: 0 30px 70px #16090c24; }
 html.theme-delta .quote-layout .wa-chat,

@@ -20,10 +20,9 @@ describe("localBusinessJsonLd", () => {
     expect(data.telephone).toBe("+542215622173");
   });
 
-  it("includes the street address", () => {
+  it("includes the city but not the street address", () => {
     expect(data.address).toEqual({
       "@type": "PostalAddress",
-      streetAddress: "Calle 2 627",
       addressLocality: "La Plata",
       addressRegion: "Buenos Aires",
       addressCountry: "AR",
