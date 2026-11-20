@@ -1,8 +1,9 @@
 import { describe, expect, it } from "vitest";
+import { defaultContent } from "@/features/content/defaults";
 import { localBusinessJsonLd, serializeJsonLd } from "./structured-data";
 
 describe("localBusinessJsonLd", () => {
-  const data = localBusinessJsonLd();
+  const data = localBusinessJsonLd(defaultContent.contact);
 
   it("describes the business with absolute URLs", () => {
     expect(data).toMatchObject({
@@ -32,10 +33,21 @@ describe("localBusinessJsonLd", () => {
   it("lists every served city and the Instagram profile", () => {
     expect(data.areaServed).toEqual([
       { "@type": "City", name: "La Plata" },
-      { "@type": "City", name: "Berisso" },
+      { "@type": "City", name: "City Bell" },
+      { "@type": "City", name: "Gonnet" },
       { "@type": "City", name: "Ensenada" },
     ]);
     expect(data.sameAs).toEqual(["https://www.instagram.com/deltafumigacion/"]);
+  });
+
+  it("reflects the edited contact data", () => {
+    const edited = localBusinessJsonLd({
+      ...defaultContent.contact,
+      phone: "5491100000000",
+      areaServed: ["City Bell"],
+    });
+    expect(edited.telephone).toBe("+5491100000000");
+    expect(edited.areaServed).toEqual([{ "@type": "City", name: "City Bell" }]);
   });
 });
 

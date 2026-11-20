@@ -7,3 +7,6 @@ next-env.d.ts
 !.env.example
 .atl/
 .DS_Store
+/src/generated/
+/AGENTS.md
+/uploads/

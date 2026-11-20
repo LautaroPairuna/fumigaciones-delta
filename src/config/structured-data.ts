@@ -1,24 +1,25 @@
+import type { SiteContent } from "@/features/content/schema";
 import { site } from "./site";
 
-export function localBusinessJsonLd() {
+export function localBusinessJsonLd(contact: SiteContent["contact"]) {
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": `${site.url}/#business`,
     name: site.brand,
-    description: site.description,
+    description: contact.description,
     url: site.url,
     logo: `${site.url}/media/delta-mark.png`,
     image: `${site.url}/opengraph-image.jpg`,
-    telephone: `+${site.phone}`,
+    telephone: `+${contact.phone}`,
     address: {
       "@type": "PostalAddress",
       addressLocality: site.address.locality,
       addressRegion: site.address.region,
       addressCountry: site.address.country,
     },
-    areaServed: site.areaServed.map((name) => ({ "@type": "City", name })),
-    sameAs: [site.instagram],
+    areaServed: contact.areaServed.map((name) => ({ "@type": "City", name })),
+    sameAs: [contact.instagram],
   };
 }
 

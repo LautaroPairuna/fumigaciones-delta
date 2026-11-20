@@ -217,9 +217,9 @@ export function CoverageMap() {
       className="coverage-map"
       id="coverage-map"
       role="group"
-      aria-label="Mapa de La Plata. La zona de cobertura, La Plata, Berisso y Ensenada, está marcada en rojo."
+      aria-label="Mapa de La Plata. La zona de cobertura, La Plata, City Bell, Gonnet y Ensenada, está marcada en rojo."
     >
-      <p className="coverage-fallback">La Plata, Berisso y Ensenada.</p>
+      <p className="coverage-fallback">La Plata, City Bell, Gonnet y Ensenada.</p>
     </div>
   );
 }

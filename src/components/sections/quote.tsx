@@ -1,56 +1,61 @@
-import { channels } from "@/components/channels";
+import type { Channels } from "@/components/channels";
 import { Icon, type IconName } from "@/components/icons";
 import { reveal } from "@/components/reveal";
-import { site } from "@/config/site";
+import type { SiteContent } from "@/features/content/schema";
 import { QuoteChat } from "@/features/quote/quote-chat";
 
-const items: {
-  kind: keyof typeof channels;
-  icon: IconName;
-  title: string;
-  text: string;
-  external: boolean;
-}[] = [
-  {
-    kind: "whatsapp",
-    icon: "whatsapp",
-    title: "WhatsApp",
-    text: "Consulta o presupuesto por mensaje.",
-    external: true,
-  },
-  {
-    kind: "instagram",
-    icon: "instagram",
-    title: "Instagram",
-    text: "Escribinos o mandá fotos del lugar.",
-    external: true,
-  },
-  {
-    kind: "phone",
-    icon: "phone",
-    title: site.phoneLabel,
-    text: "Atención y emergencias.",
-    external: false,
-  },
-  {
-    kind: "coverage",
-    icon: "pin",
-    title: "La Plata y alrededores",
-    text: "Berisso, Ensenada y zonas cercanas.",
-    external: false,
-  },
-];
+export function Quote({
+  content,
+  contact,
+  channels,
+}: {
+  content: SiteContent["quote"];
+  contact: SiteContent["contact"];
+  channels: Channels;
+}) {
+  const items: {
+    kind: keyof Channels;
+    icon: IconName;
+    title: string;
+    text: string;
+    external: boolean;
+  }[] = [
+    {
+      kind: "whatsapp",
+      icon: "whatsapp",
+      title: "WhatsApp",
+      text: content.whatsappText,
+      external: true,
+    },
+    {
+      kind: "instagram",
+      icon: "instagram",
+      title: "Instagram",
+      text: content.instagramText,
+      external: true,
+    },
+    {
+      kind: "phone",
+      icon: "phone",
+      title: contact.phoneLabel,
+      text: content.phoneText,
+      external: false,
+    },
+    {
+      kind: "coverage",
+      icon: "pin",
+      title: content.coverageTitle,
+      text: content.coverageText,
+      external: false,
+    },
+  ];
 
-export function Quote() {
   return (
     <section className="quote-section" id="cotizar" aria-labelledby="quote-title">
       <div className="container quote-layout">
         <div className="quote-intro" {...reveal()}>
-          <h2 id="quote-title">Pedí tu presupuesto.</h2>
-          <p>
-            El cotizador arma el mensaje con tu nombre, qué está pasando y la dirección. Si
-            preferís, llamá o escribinos.
-          </p>
+          <h2 id="quote-title">{content.title}</h2>
+          <p>{content.lead}</p>
           <div className="channel-row">
             {items.map((item) => (
               <a
@@ -69,11 +74,9 @@ export function Quote() {
               </a>
             ))}
           </div>
-          <p className="quote-note">
-            Casas, negocios y locales gastronómicos en La Plata, Berisso y Ensenada.
-          </p>
+          {content.note ? <p className="quote-note">{content.note}</p> : null}
         </div>
-        <QuoteChat {...reveal(1)} />
+        <QuoteChat whatsapp={contact.whatsapp} {...reveal(1)} />
       </div>
     </section>
   );

@@ -1,52 +1,35 @@
-import type { ReactNode } from "react";
 import { AccordionGroup } from "@/components/accordion-group";
-import { channels } from "@/components/channels";
+import type { Channels } from "@/components/channels";
 import { Icon } from "@/components/icons";
 import { reveal } from "@/components/reveal";
+import { parseRichText } from "@/features/content/rich-text";
+import type { SiteContent } from "@/features/content/schema";
 
-const questions: { question: string; answer: ReactNode }[] = [
-  {
-    question: "¿Tengo que abandonar mi casa para fumigar?",
-    answer: (
-      <>
-        <p>
-          Si el trabajo es en toda la casa, conviene irse y volver a las 4 horas, cuando se disipen
-          los gases.
-        </p>
-        <ul className="mt-3 mb-0 list-none space-y-2 p-0">
-          <li className="relative pl-5 before:absolute before:top-[0.6em] before:left-0 before:size-1.5 before:rounded-full before:bg-delta">
-            Guardá en bolsas de consorcio los alimentos abiertos, los cepillos de dientes y el papel
-            higiénico.
-          </li>
-          <li className="relative pl-5 before:absolute before:top-[0.6em] before:left-0 before:size-1.5 before:rounded-full before:bg-delta">
-            Las mascotas salen con vos.
-          </li>
-        </ul>
-        <p className="mt-3">Del resto nos hacemos cargo nosotros.</p>
-      </>
-    ),
-  },
-  {
-    question: "¿Usan productos tóxicos?",
-    answer: (
-      <p>
-        El tratamiento usa insecticida químico. Todos los productos están aprobados por ANMAT y
-        habilitados para uso domiciliario.
+function Answer({ text }: { text: string }) {
+  return parseRichText(text).map((block, index) =>
+    block.type === "paragraph" ? (
+      <p key={block.text} className={index > 0 ? "mt-3" : undefined}>
+        {block.text}
       </p>
+    ) : (
+      <ul
+        key={block.items.join("|")}
+        className={`${index > 0 ? "mt-3" : ""} mb-0 list-none space-y-2 p-0`}
+      >
+        {block.items.map((item) => (
+          <li
+            key={item}
+            className="relative pl-5 before:absolute before:top-[0.6em] before:left-0 before:size-1.5 before:rounded-full before:bg-delta"
+          >
+            {item}
+          </li>
+        ))}
+      </ul>
     ),
-  },
-  {
-    question: "¿Emiten certificados?",
-    answer: (
-      <p>
-        Sí. Emitimos certificados avalados por el Ministerio de Desarrollo Agrario y por un asesor
-        técnico matriculado.
-      </p>
-    ),
-  },
-];
+  );
+}
 
-export function Faq() {
+export function Faq({ content, channels }: { content: SiteContent["faq"]; channels: Channels }) {
   return (
     <section id="preguntas" aria-labelledby="faq-title" className="bg-sand font-body text-ink">
       <div className="mx-auto grid w-[calc(100%-36px)] max-w-[1120px] gap-8 py-14 md:w-[calc(100%-72px)] md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.4fr)] md:gap-16 md:py-20">
@@ -55,11 +38,13 @@ export function Faq() {
             id="faq-title"
             className="m-0 font-display text-[clamp(30px,3.4vw,44px)] leading-none font-semibold tracking-[-0.04em] text-ink"
           >
-            Preguntas frecuentes
+            {content.title}
           </h2>
-          <p className="mt-4 mb-0 max-w-sm text-base leading-relaxed text-muted">
-            Lo que más nos consultan antes de un tratamiento.
-          </p>
+          {content.lead ? (
+            <p className="mt-4 mb-0 max-w-sm text-base leading-relaxed text-muted">
+              {content.lead}
+            </p>
+          ) : null}
           <a
             href={channels.whatsapp}
             target="_blank"
@@ -67,11 +52,11 @@ export function Faq() {
             className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-lg whitespace-nowrap bg-delta px-5 text-[15px] font-bold text-white no-underline transition-colors hover:bg-delta-dark focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-delta-dark [&_.icon]:size-[18px]"
           >
             <Icon name="whatsapp" />
-            ¿Otra duda? Escribinos
+            {content.ctaLabel}
           </a>
         </div>
         <AccordionGroup className="border-t border-line">
-          {questions.map((item, index) => (
+          {content.questions.map((item, index) => (
             <details
               key={item.question}
               name="faq"
@@ -91,7 +76,7 @@ export function Faq() {
               </summary>
               <div>
                 <div className="pr-4 pb-6 text-[15px] leading-relaxed text-muted md:pr-16 md:text-base [&_p]:m-0">
-                  {item.answer}
+                  <Answer text={item.answer} />
                 </div>
               </div>
             </details>

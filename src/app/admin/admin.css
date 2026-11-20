@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-archivo), var(--font-manrope), sans-serif;
+  --font-body: var(--font-manrope), "Segoe UI", sans-serif;
+
+  --color-delta: #c4121c;
+  --color-delta-dark: #9b0c14;
+  --color-ink: #1c1214;
+  --color-muted: #5c4a4e;
+  --color-line: #e0d4d2;
+  --color-sand: #f3eeec;
+  --color-paper: #f7f4f2;
+
+  --ease-out-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+@layer base {
+  body {
+    @apply bg-paper font-body text-ink antialiased;
+  }
+
+  :focus-visible {
+    @apply outline-3 outline-offset-2 outline-delta-dark;
+  }
+
+  ::selection {
+    @apply bg-delta/20;
+  }
+}
+
+@keyframes admin-fade-up {
+  from {
+    opacity: 0;
+    translate: 0 10px;
+  }
+}
+
+@keyframes admin-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes admin-scale-in {
+  from {
+    opacity: 0;
+    scale: 0.96;
+    translate: 0 8px;
+  }
+}
+
+@keyframes admin-slide-in-left {
+  from {
+    translate: -100% 0;
+  }
+}
+
+@keyframes admin-slide-up {
+  from {
+    opacity: 0;
+    translate: 0 100%;
+  }
+}
+
+@keyframes admin-toast {
+  0% {
+    opacity: 0;
+    translate: 0 16px;
+    scale: 0.96;
+  }
+  8%,
+  88% {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+  100% {
+    opacity: 0;
+    translate: 0 8px;
+  }
+}
+
+@keyframes admin-pulse-dot {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* Motion only for people who have not asked to reduce it. */
+@media (prefers-reduced-motion: no-preference) {
+  .anim-fade-up {
+    animation: admin-fade-up 0.5s var(--ease-out-soft) backwards;
+    animation-delay: calc(var(--i, 0) * 45ms);
+  }
+
+  .anim-fade-in {
+    animation: admin-fade-in 0.4s ease-out backwards;
+  }
+
+  .anim-scale-in {
+    animation: admin-scale-in 0.35s var(--ease-out-soft) backwards;
+  }
+
+  .anim-slide-up {
+    animation: admin-slide-up 0.35s var(--ease-out-soft) backwards;
+  }
+
+  .anim-pulse-dot {
+    animation: admin-pulse-dot 1.4s ease-in-out infinite;
+  }
+
+  .anim-drawer {
+    animation: admin-slide-in-left 0.3s var(--ease-out-soft) backwards;
+  }
+
+  .anim-toast {
+    animation: admin-toast 4s var(--ease-out-soft) both;
+  }
+
+  .lift {
+    transition:
+      translate 0.25s var(--ease-out-soft),
+      box-shadow 0.25s var(--ease-out-soft),
+      border-color 0.2s ease;
+  }
+
+  .lift:hover {
+    translate: 0 -2px;
+    box-shadow: 0 10px 24px -14px rgb(28 18 20 / 0.35);
+  }
+
+  dialog[open] {
+    animation: admin-scale-in 0.3s var(--ease-out-soft) backwards;
+  }
+
+  dialog[open]::backdrop {
+    animation: admin-fade-in 0.3s ease-out backwards;
+  }
+
+  details[open] > .details-body {
+    animation: admin-fade-up 0.3s var(--ease-out-soft) backwards;
+  }
+}

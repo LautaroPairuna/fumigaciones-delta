@@ -1,10 +1,17 @@
-import { channels } from "@/components/channels";
+import type { Channels } from "@/components/channels";
 import { Icon } from "@/components/icons";
-import { site } from "@/config/site";
 
 const external = { target: "_blank", rel: "noopener noreferrer" } as const;
 
-export function SiteFooter() {
+export function SiteFooter({
+  tagline,
+  phoneLabel,
+  channels,
+}: {
+  tagline: string;
+  phoneLabel: string;
+  channels: Channels;
+}) {
   return (
     <footer className="site-footer">
       <div className="footer-inner">
@@ -31,7 +38,7 @@ export function SiteFooter() {
                 <span>DELTA</span>
               </span>
             </a>
-            <p>Control de plagas urbanas en La Plata.</p>
+            <p>{tagline}</p>
           </div>
           <div className="footer-actions">
             <nav className="footer-nav" aria-label="Navegación del pie">
@@ -58,11 +65,7 @@ export function SiteFooter() {
               >
                 <Icon name="instagram" />
               </a>
-              <a
-                data-channel="phone"
-                href={channels.phone}
-                aria-label={`Llamar al ${site.phoneLabel}`}
-              >
+              <a data-channel="phone" href={channels.phone} aria-label={`Llamar al ${phoneLabel}`}>
                 <Icon name="phone" />
               </a>
               <a
@@ -71,6 +74,9 @@ export function SiteFooter() {
                 aria-label="Zona de cobertura: La Plata y alrededores"
               >
                 <Icon name="pin" />
+              </a>
+              <a href="/admin" rel="nofollow" aria-label="Panel de administración">
+                <Icon name="settings" />
               </a>
             </nav>
           </div>

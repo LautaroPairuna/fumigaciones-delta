@@ -34,6 +34,11 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   output: "standalone",
   poweredByHeader: false,
+  // ffmpeg-static resolves its binary by path at runtime; bundling it breaks that path.
+  serverExternalPackages: ["ffmpeg-static"],
+  outputFileTracingIncludes: {
+    "/api/admin/media": ["./node_modules/ffmpeg-static/ffmpeg*"],
+  },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },

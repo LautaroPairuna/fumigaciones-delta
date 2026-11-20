@@ -1,57 +1,39 @@
 import type { CSSProperties } from "react";
-import { channels } from "@/components/channels";
+import type { Channels } from "@/components/channels";
 import { CoverageMap } from "@/components/coverage-map";
-import { Icon, type IconName } from "@/components/icons";
+import { Icon } from "@/components/icons";
 import { MarqueeToggle } from "@/components/marquee-toggle";
 import { reveal } from "@/components/reveal";
-import { site } from "@/config/site";
-
-const reviews = [
-  { text: "Marcaron el foco de cucarachas y a los días no vimos más.", who: "Camila, Tolosa" },
-  { text: "En el local coordinaron fuera del horario de cocina.", who: "Martín, Centro" },
-  { text: "Pensábamos que eran ratas. Eran murciélagos y lo cerraron.", who: "Diego, City Bell" },
-  { text: "Pulgas en la casa. Volvieron a controlar y quedó resuelto.", who: "Pablo, Los Hornos" },
-  {
-    text: "Explicaron qué no tocar ese día. El departamento quedó habitable.",
-    who: "Laura, Gonnet",
-  },
-  { text: "Puntuales, y la casa no quedó con olor.", who: "Sofía, Berisso" },
-];
-
-const assurances: { icon: IconName; title: string; text: string }[] = [
-  {
-    icon: "shield",
-    title: "Exclusión de murciélagos",
-    text: "Diagnóstico del ingreso y cierre, con seguimiento.",
-  },
-  {
-    icon: "hygiene",
-    title: "Tratamiento ecológico",
-    text: "El lugar queda habitable, sin un olor que se quede.",
-  },
-  {
-    icon: "tools",
-    title: "Instrumentos profesionales",
-    text: "Gel, estaciones y equipos según el foco.",
-  },
-  {
-    icon: "van",
-    title: "Servicio a domicilio",
-    text: "Movilidad propia en La Plata, Berisso y Ensenada.",
-  },
-];
+import type { SiteContent } from "@/features/content/schema";
 
 const fullScore = { "--score": 5 } as CSSProperties;
 
-// The marquee loops seamlessly by repeating the list; only the first six are announced.
-const marquee = [
-  reviews
-    .map((review, index) => ({ ...review, hidden: false, key: `a${index}` }))
-    .concat(reviews.map((review, index) => ({ ...review, hidden: true, key: `b${index}` }))),
-  [...reviews, ...reviews].map((review, index) => ({ ...review, hidden: true, key: `c${index}` })),
-];
+type Review = SiteContent["coverage"]["reviews"][number];
 
-export function Coverage() {
+// The marquee loops seamlessly by repeating the list; only the first copy is announced.
+function marqueeSets(reviews: Review[]) {
+  return [
+    reviews
+      .map((review, index) => ({ ...review, hidden: false, key: `a${index}` }))
+      .concat(reviews.map((review, index) => ({ ...review, hidden: true, key: `b${index}` }))),
+    [...reviews, ...reviews].map((review, index) => ({
+      ...review,
+      hidden: true,
+      key: `c${index}`,
+    })),
+  ];
+}
+
+export function Coverage({
+  content,
+  areaServed,
+  channels,
+}: {
+  content: SiteContent["coverage"];
+  areaServed: string[];
+  channels: Channels;
+}) {
+  const marquee = marqueeSets(content.reviews);
   return (
     <section className="house" id="cobertura" aria-labelledby="coverage-title">
       <div className="review-rail" {...reveal(0, "fade")}>
@@ -103,25 +85,28 @@ export function Coverage() {
         <div className="house-main">
           <div className="house-copy text-left" {...reveal()}>
             <p className="m-0 mb-3 flex items-center gap-2.5 text-[13px] font-extrabold tracking-[0.14em] text-delta uppercase before:h-0.5 before:w-6 before:bg-delta">
-              Zona de servicio
+              {content.eyebrow}
             </p>
             <h2
               id="coverage-title"
               className="m-0 max-w-none font-display text-[clamp(34px,min(3.6vw,6vh),58px)] leading-[0.95] font-semibold tracking-[-0.05em] text-ink"
             >
-              Cobertura en
-              <br />
-              La Plata.
+              {content.titleLine1}
+              {content.titleLine2 ? (
+                <>
+                  <br />
+                  {content.titleLine2}
+                </>
+              ) : null}
             </h2>
             <p className="mx-0 mt-4 mb-0 max-w-[40ch] text-[clamp(15px,1.15vw,17px)] leading-relaxed text-muted">
-              Casas, negocios y locales gastronómicos. Confirmamos la zona antes de coordinar la
-              visita.
+              {content.lead}
             </p>
             <ul
               aria-label="Zona de cobertura"
               className="m-0 mt-[clamp(14px,2.2vh,20px)] flex list-none flex-wrap gap-2 p-0"
             >
-              {site.areaServed.map((area) => (
+              {areaServed.map((area) => (
                 <li
                   key={area}
                   className="inline-flex min-h-9 items-center gap-1.5 rounded-full border border-delta/25 bg-white pr-3.5 pl-2.5 text-sm font-bold text-ink"
@@ -134,9 +119,9 @@ export function Coverage() {
               ))}
             </ul>
             <ul className="m-0 mt-[clamp(16px,2.6vh,24px)] grid w-full max-w-[600px] list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2">
-              {assurances.map((item) => (
+              {content.assurances.map((item) => (
                 <li
-                  key={item.icon}
+                  key={`${item.icon}-${item.title}`}
                   className="flex items-start gap-3 rounded-xl border border-line bg-white p-3.5 text-left"
                 >
                   <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-delta/10 text-delta [&_.icon]:size-[18px]">
@@ -156,7 +141,7 @@ export function Coverage() {
                 href="#cotizar"
                 className="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg whitespace-nowrap bg-delta px-5 text-[15px] font-bold text-white no-underline transition-colors hover:bg-delta-dark focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-delta-dark [&_.icon]:size-4"
               >
-                Cotizar para mi zona
+                {content.ctaLabel}
                 <Icon name="arrow" />
               </a>
               <a

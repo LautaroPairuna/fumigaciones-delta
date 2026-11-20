@@ -1,0 +1,99 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model User {
+  id            String    @id @db.VarChar(36)
+  name          String    @db.VarChar(191)
+  email         String    @unique @db.VarChar(191)
+  emailVerified Boolean   @default(false)
+  image         String?   @db.Text
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  sessions      Session[]
+  accounts      Account[]
+
+  @@map("user")
+}
+
+model Session {
+  id        String   @id @db.VarChar(36)
+  expiresAt DateTime
+  token     String   @unique @db.VarChar(191)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  ipAddress String?  @db.VarChar(64)
+  userAgent String?  @db.Text
+  userId    String   @db.VarChar(36)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("session")
+}
+
+model Account {
+  id                    String    @id @db.VarChar(36)
+  accountId             String    @db.VarChar(191)
+  providerId            String    @db.VarChar(64)
+  userId                String    @db.VarChar(36)
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken           String?   @db.Text
+  refreshToken          String?   @db.Text
+  idToken               String?   @db.Text
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?   @db.Text
+  password              String?   @db.Text
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  @@index([userId])
+  @@map("account")
+}
+
+model Verification {
+  id         String   @id @db.VarChar(36)
+  identifier String   @db.VarChar(191)
+  value      String   @db.Text
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([identifier])
+  @@map("verification")
+}
+
+model Section {
+  key       String   @id @db.VarChar(40)
+  content   Json
+  updatedAt DateTime @updatedAt
+  updatedBy String?  @db.VarChar(191)
+
+  @@map("section")
+}
+
+enum MediaKind {
+  IMAGE
+  VIDEO
+}
+
+model Media {
+  id           String    @id @db.VarChar(36)
+  kind         MediaKind
+  file         String    @db.VarChar(80)
+  poster       String?   @db.VarChar(80)
+  width        Int
+  height       Int
+  bytes        Int
+  durationSec  Float?
+  originalName String    @db.VarChar(255)
+  createdAt    DateTime  @default(now())
+
+  @@index([kind, createdAt])
+  @@map("media")
+}

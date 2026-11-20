@@ -1,9 +1,13 @@
-import { site } from "@/config/site";
+import type { SiteContent } from "@/features/content/schema";
 import { whatsappUrl } from "@/features/quote/quote";
 
-export const channels = {
-  whatsapp: whatsappUrl(site.whatsapp, site.greeting),
-  instagram: site.instagram,
-  phone: `tel:+${site.phone}`,
-  coverage: "#cobertura",
-};
+export type Channels = ReturnType<typeof channelLinks>;
+
+export function channelLinks(contact: SiteContent["contact"]) {
+  return {
+    whatsapp: whatsappUrl(contact.whatsapp, contact.greeting),
+    instagram: contact.instagram,
+    phone: `tel:+${contact.phone}`,
+    coverage: "#cobertura",
+  };
+}

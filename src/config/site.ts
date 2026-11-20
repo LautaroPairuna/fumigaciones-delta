@@ -1,21 +1,21 @@
+// Fixed identity of the site. Editable copy and contact data live in the content sections.
 export const site = {
   url: "https://fumigacionesdelta.com",
   brand: "Fumigaciones Delta",
-  title: "Delta · Fumigaciones en La Plata",
-  description:
-    "Fumigaciones Delta en La Plata. Control de plagas, exclusión de murciélagos y servicios certificados para casas, gastronomía e industria. Presupuesto sin cargo.",
-  whatsapp: "542215622173",
-  instagram: "https://www.instagram.com/deltafumigacion/",
-  phone: "542215622173",
-  phoneLabel: "0221 562-2173",
   address: {
     locality: "La Plata",
     region: "Buenos Aires",
     country: "AR",
   },
-  areaServed: ["La Plata", "Berisso", "Ensenada"],
   coverage: "/data/coverage-delta.json",
+  // Same file as src/app/opengraph-image.jpg; pages that set their own openGraph must list it.
+  ogImage: {
+    url: "/opengraph-image.jpg",
+    width: 1200,
+    height: 630,
+    alt: "Fumigaciones Delta · Control de plagas en La Plata",
+    type: "image/jpeg",
+  },
   addressExample: "Ej.: Calle 12 1450, Tolosa",
   problemExample: "Ej.: Hay murciélagos en el techo de mi casa…",
-  greeting: "Hola Fumigaciones Delta. Quiero consultar por un servicio.",
 } as const;

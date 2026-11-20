@@ -33,7 +33,7 @@ const prompts: Record<QuoteStage, { label: string; placeholder: string; autoComp
 
 const emptyAnswers: Answers = { name: "", problem: "", address: "" };
 
-export function QuoteChat(props: ComponentProps<"div">) {
+export function QuoteChat({ whatsapp, ...props }: ComponentProps<"div"> & { whatsapp: string }) {
   const [stage, setStage] = useState<QuoteStage | "done">(0);
   const [promptStage, setPromptStage] = useState<QuoteStage>(0);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -51,11 +51,11 @@ export function QuoteChat(props: ComponentProps<"div">) {
   const scrollBehavior = useRef<ScrollBehavior>("smooth");
 
   const waiting = typing || (stage !== "done" && stage !== promptStage);
-  const hasContact = hasWhatsappContact(site.whatsapp);
+  const hasContact = hasWhatsappContact(whatsapp);
   const sendHref =
     stage === "done"
-      ? whatsappUrl(site.whatsapp, buildQuoteMessage({ brand: site.brand, ...answers }))
-      : `https://wa.me/${site.whatsapp}`;
+      ? whatsappUrl(whatsapp, buildQuoteMessage({ brand: site.brand, ...answers }))
+      : `https://wa.me/${whatsapp}`;
 
   useEffect(() => {
     scrollBehavior.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches
