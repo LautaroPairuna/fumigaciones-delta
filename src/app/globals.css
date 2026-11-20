@@ -1,0 +1,29 @@
+@layer theme, vendor, legacy, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@import "leaflet/dist/leaflet.css" layer(vendor);
+
+@import "../styles/legacy/styles.css" layer(legacy);
+@import "../styles/legacy/experience.css" layer(legacy);
+@import "../styles/legacy/commercial.css" layer(legacy);
+@import "../styles/legacy/refresh.css" layer(legacy);
+@import "../styles/legacy/redesign.css" layer(legacy);
+@import "../styles/legacy/delta.css" layer(legacy);
+
+@import "../styles/motion.css" layer(components);
+
+@source not inline("container");
+
+@theme {
+  --font-display: var(--font-archivo), var(--font-manrope), sans-serif;
+  --font-body: var(--font-manrope), "Segoe UI", sans-serif;
+
+  --color-delta: #c4121c;
+  --color-delta-dark: #9b0c14;
+  --color-ink: #1c1214;
+  --color-muted: #5c4a4e;
+  --color-line: #e0d4d2;
+  --color-sand: #f3eeec;
+  --color-paper: #f7f4f2;
+}

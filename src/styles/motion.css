@@ -1,0 +1,33 @@
+@media (prefers-reduced-motion: no-preference) {
+  .js-reveal [data-reveal]:not(.is-revealed) {
+    opacity: 0;
+  }
+
+  .js-reveal [data-reveal].is-revealed {
+    animation: reveal-rise 0.75s cubic-bezier(0.16, 0.84, 0.32, 1) backwards;
+    animation-delay: calc(var(--reveal-order, 0) * 90ms);
+  }
+
+  .js-reveal [data-reveal="fade"].is-revealed {
+    animation-name: reveal-fade;
+  }
+}
+
+@keyframes reveal-rise {
+  from {
+    opacity: 0;
+    translate: 0 28px;
+  }
+}
+
+@keyframes reveal-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+.review-track.is-paused,
+.review-viewport:hover .review-track,
+.review-viewport:focus-within .review-track {
+  animation-play-state: paused;
+}
