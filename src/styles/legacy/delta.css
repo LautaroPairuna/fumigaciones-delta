@@ -1078,6 +1078,6 @@ section.bats {
 html.theme-delta .icon { stroke-width: 1.8; }
 html.theme-delta .button,
 html.theme-delta .button-small,
-html.theme-delta .nav-cta { gap: 10px; border-radius: 8px; }
+html.theme-delta .nav-cta { gap: 10px; border-radius: 8px; white-space: nowrap; }
 html.theme-delta .button .icon,
 html.theme-delta .nav-cta .icon { width: 18px; height: 18px; flex-basis: 18px; }

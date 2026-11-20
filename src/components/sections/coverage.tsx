@@ -124,12 +124,11 @@ export function Coverage() {
               {site.areaServed.map((area) => (
                 <li
                   key={area}
-                  className="inline-flex min-h-9 items-center gap-2 rounded-full border border-delta/25 bg-white px-3.5 text-sm font-bold text-ink"
+                  className="inline-flex min-h-9 items-center gap-1.5 rounded-full border border-delta/25 bg-white pr-3.5 pl-2.5 text-sm font-bold text-ink"
                 >
-                  <span
-                    aria-hidden="true"
-                    className="size-3 rounded-[3px] bg-delta/25 ring-2 ring-delta-dark/70"
-                  />
+                  <span className="text-delta [&_.icon]:size-4">
+                    <Icon name="pin" />
+                  </span>
                   {area}
                 </li>
               ))}
@@ -155,7 +154,7 @@ export function Coverage() {
             <div className="mt-[clamp(16px,2.6vh,24px)] flex flex-wrap items-center gap-3">
               <a
                 href="#cotizar"
-                className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-delta px-5 text-[15px] font-bold text-white no-underline transition-colors hover:bg-delta-dark focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-delta-dark [&_.icon]:size-4"
+                className="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg whitespace-nowrap bg-delta px-5 text-[15px] font-bold text-white no-underline transition-colors hover:bg-delta-dark focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-delta-dark [&_.icon]:size-4"
               >
                 Cotizar para mi zona
                 <Icon name="arrow" />
@@ -164,7 +163,7 @@ export function Coverage() {
                 href={channels.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-line bg-white px-4 text-[15px] font-bold text-ink no-underline transition-colors hover:border-delta hover:text-delta-dark focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-delta-dark [&_.icon]:size-[18px] [&_.icon]:text-[#1f9d55]"
+                className="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg whitespace-nowrap border border-line bg-white px-4 text-[15px] font-bold text-ink no-underline transition-colors hover:border-delta hover:text-delta-dark focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-delta-dark [&_.icon]:size-[18px] [&_.icon]:text-[#1f9d55]"
               >
                 <Icon name="whatsapp" />
                 WhatsApp
