@@ -1,8 +1,10 @@
 import type { CSSProperties } from "react";
+import { channels } from "@/components/channels";
 import { CoverageMap } from "@/components/coverage-map";
 import { Icon, type IconName } from "@/components/icons";
 import { MarqueeToggle } from "@/components/marquee-toggle";
 import { reveal } from "@/components/reveal";
+import { site } from "@/config/site";
 
 const reviews = [
   { text: "Marcaron el foco de cucarachas y a los días no vimos más.", who: "Camila, Tolosa" },
@@ -99,34 +101,75 @@ export function Coverage() {
       </div>
       <div className="house-body">
         <div className="house-main">
-          <div className="house-copy" {...reveal()}>
-            <h2 id="coverage-title">
+          <div className="house-copy text-left" {...reveal()}>
+            <p className="m-0 mb-3 flex items-center gap-2.5 text-[13px] font-extrabold tracking-[0.14em] text-delta uppercase before:h-0.5 before:w-6 before:bg-delta">
+              Zona de servicio
+            </p>
+            <h2
+              id="coverage-title"
+              className="m-0 max-w-none font-display text-[clamp(34px,min(3.6vw,6vh),58px)] leading-[0.95] font-semibold tracking-[-0.05em] text-ink"
+            >
               Cobertura en
               <br />
               La Plata.
             </h2>
-            <p>
-              Casas, negocios y locales gastronómicos en La Plata, Berisso y Ensenada. Confirmamos
-              la zona antes de coordinar la visita.
+            <p className="mx-0 mt-4 mb-0 max-w-[40ch] text-[clamp(15px,1.15vw,17px)] leading-relaxed text-muted">
+              Casas, negocios y locales gastronómicos. Confirmamos la zona antes de coordinar la
+              visita.
             </p>
-            <p className="coverage-key">
-              <span aria-hidden="true" />
-              Zona de cobertura
-            </p>
-            <ul className="house-assurances">
-              {assurances.map((item) => (
-                <li key={item.icon}>
-                  <Icon name={item.icon} />
-                  <div>
-                    <strong>{item.title}</strong>
-                    <span>{item.text}</span>
-                  </div>
+            <ul
+              aria-label="Zona de cobertura"
+              className="m-0 mt-[clamp(14px,2.2vh,20px)] flex list-none flex-wrap gap-2 p-0"
+            >
+              {site.areaServed.map((area) => (
+                <li
+                  key={area}
+                  className="inline-flex min-h-9 items-center gap-2 rounded-full border border-delta/25 bg-white px-3.5 text-sm font-bold text-ink"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="size-3 rounded-[3px] bg-delta/25 ring-2 ring-delta-dark/70"
+                  />
+                  {area}
                 </li>
               ))}
             </ul>
-            <a className="house-link" href="#cotizar">
-              Cotizar para mi zona
-            </a>
+            <ul className="m-0 mt-[clamp(16px,2.6vh,24px)] grid w-full max-w-[600px] list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2">
+              {assurances.map((item) => (
+                <li
+                  key={item.icon}
+                  className="flex items-start gap-3 rounded-xl border border-line bg-white p-3.5 text-left"
+                >
+                  <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-delta/10 text-delta [&_.icon]:size-[18px]">
+                    <Icon name={item.icon} />
+                  </span>
+                  <span className="flex flex-col gap-1">
+                    <strong className="text-[15px] leading-tight font-bold text-ink">
+                      {item.title}
+                    </strong>
+                    <span className="text-[13.5px] leading-snug text-muted">{item.text}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-[clamp(16px,2.6vh,24px)] flex flex-wrap items-center gap-3">
+              <a
+                href="#cotizar"
+                className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-delta px-5 text-[15px] font-bold text-white no-underline transition-colors hover:bg-delta-dark focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-delta-dark [&_.icon]:size-4"
+              >
+                Cotizar para mi zona
+                <Icon name="arrow" />
+              </a>
+              <a
+                href={channels.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-line bg-white px-4 text-[15px] font-bold text-ink no-underline transition-colors hover:border-delta hover:text-delta-dark focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-delta-dark [&_.icon]:size-[18px] [&_.icon]:text-[#1f9d55]"
+              >
+                <Icon name="whatsapp" />
+                WhatsApp
+              </a>
+            </div>
           </div>
           <CoverageMap />
         </div>

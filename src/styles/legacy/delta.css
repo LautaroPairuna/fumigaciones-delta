@@ -1047,10 +1047,11 @@ section.bats {
 }
 
 /* Cobertura en escritorio: el texto en un panel propio y el mapa a la derecha, sin
-   superponerse, para que las calles y localidades del mapa no queden debajo del texto. */
+   superponerse, para que las calles y localidades del mapa no queden debajo del texto.
+   El contenido del panel tiene sus estilos en coverage.tsx. */
 @media (min-width: 901px) {
   html.theme-delta .house-main {
-    grid-template-columns: minmax(440px, 38%) minmax(0, 1fr);
+    grid-template-columns: calc(max(28px, (100vw - 1360px) / 2) + 580px) minmax(0, 1fr);
     align-items: stretch;
     background: #f7f4f2;
   }
@@ -1059,33 +1060,10 @@ section.bats {
     grid-column: 1;
     grid-row: 1;
     align-items: flex-start;
-    text-align: left;
-    padding: 72px clamp(28px, 3vw, 56px) 24px max(28px, calc((100vw - 1360px) / 2));
+    padding: clamp(60px, 9vh, 80px) clamp(28px, 3vw, 56px) clamp(16px, 3vh, 28px) max(28px, calc((100vw - 1360px) / 2));
     background: #f7f4f2;
     box-shadow: 1px 0 0 #e3d6d4, 12px 0 32px -18px #1c121433;
   }
-  html.theme-delta .house h2,
-  html.theme-delta .house-copy > p { margin-inline: 0; }
-  html.theme-delta .coverage-key { justify-content: flex-start; margin-inline: 0; }
-  html.theme-delta .house-assurances { width: 100%; max-width: 420px; margin-inline: 0; }
-  html.theme-delta .house-assurances li {
-    grid-template-columns: 20px minmax(0, 1fr);
-    justify-items: start;
-    align-items: start;
-    column-gap: 12px;
-    text-align: left;
-  }
-  html.theme-delta .house-assurances .icon { margin-top: 2px; }
-  html.theme-delta .house-link {
-    min-height: 44px;
-    margin-top: 14px;
-    padding: 0 20px;
-    border-radius: 8px;
-    background: #c4121c;
-    color: #fff;
-    text-decoration: none;
-  }
-  html.theme-delta .house-link:hover { background: #9b0c14; color: #fff; }
   html.theme-delta .house .coverage-map {
     position: relative;
     inset: auto;
