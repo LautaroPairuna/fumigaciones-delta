@@ -64,10 +64,10 @@ export function Faq() {
             href={channels.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-full bg-delta px-5 text-[15px] font-bold text-white no-underline transition-colors hover:bg-delta-dark focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-delta-dark [&_.icon]:size-[18px]"
+            className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-lg bg-delta px-5 text-[15px] font-bold text-white no-underline transition-colors hover:bg-delta-dark focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-delta-dark [&_.icon]:size-[18px]"
           >
-            ¿Otra duda? Escribinos
             <Icon name="whatsapp" />
+            ¿Otra duda? Escribinos
           </a>
         </div>
         <AccordionGroup className="border-t border-line">

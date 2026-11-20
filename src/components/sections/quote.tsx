@@ -65,7 +65,7 @@ export function Quote() {
                   <strong>{item.title}</strong>
                   <small>{item.text}</small>
                 </span>
-                <Icon name="diagonal" className="icon channel-go" />
+                <Icon name={item.external ? "diagonal" : "arrow"} className="icon channel-go" />
               </a>
             ))}
           </div>

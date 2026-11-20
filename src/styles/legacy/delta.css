@@ -1072,3 +1072,12 @@ section.bats {
     height: 100%;
   }
 }
+
+/* Una sola familia de botones e íconos: mismo radio y espaciado en todos los botones, y
+   trazo parejo para los íconos de Lucide. */
+html.theme-delta .icon { stroke-width: 1.8; }
+html.theme-delta .button,
+html.theme-delta .button-small,
+html.theme-delta .nav-cta { gap: 10px; border-radius: 8px; }
+html.theme-delta .button .icon,
+html.theme-delta .nav-cta .icon { width: 18px; height: 18px; flex-basis: 18px; }

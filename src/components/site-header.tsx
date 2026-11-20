@@ -181,7 +181,7 @@ export function SiteHeader() {
           </div>
           <a className="button button-small nav-cta" href="#cotizar">
             Pedir presupuesto
-            <Icon name="diagonal" />
+            <Icon name="arrow" />
           </a>
         </nav>
         <button
