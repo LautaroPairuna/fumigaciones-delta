@@ -106,7 +106,7 @@ export function CoverageMap() {
         const wide = size.x >= 900;
         leafletMap.fitBounds(zoneBounds ?? zoneLayer.getBounds(), {
           paddingTopLeft: [
-            wide ? Math.round(size.x * 0.4) : 18,
+            wide ? Math.round(size.x * 0.05) : 18,
             wide ? Math.round(size.y * 0.16) : 28,
           ],
           paddingBottomRight: [
