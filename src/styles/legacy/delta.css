@@ -1081,3 +1081,9 @@ html.theme-delta .button-small,
 html.theme-delta .nav-cta { gap: 10px; border-radius: 8px; white-space: nowrap; }
 html.theme-delta .button .icon,
 html.theme-delta .nav-cta .icon { width: 18px; height: 18px; flex-basis: 18px; }
+
+/* Murciélagos en celular: la sección crece con el contenido en vez de quedar del alto de
+   la pantalla, que con el panel de la temporada y la ley no entra. */
+@media (max-width: 860px) {
+  section.bats { height: auto; min-height: var(--bats-screen); padding: 48px 0; }
+}
