@@ -25,7 +25,7 @@ export function SiteFooter({
             >
               <img
                 className="brand-mark"
-                src="/media/delta-mark.webp"
+                src="/media/delta-mark.svg"
                 alt=""
                 width={96}
                 height={96}

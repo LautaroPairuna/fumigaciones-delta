@@ -63,7 +63,7 @@ export function AdminNav({ name, email }: { name: string; email: string }) {
   const panel = (
     <div className="flex h-full flex-col">
       <div className="flex items-center gap-3 px-5 pt-5 pb-4">
-        <img src="/media/delta-mark.webp" alt="" width={36} height={36} />
+        <img src="/media/delta-mark.svg" alt="" width={36} height={36} />
         <div className="leading-tight">
           <p className="m-0 font-display text-[15px] font-semibold">Panel Delta</p>
           <p className="m-0 text-xs text-muted">Contenido del sitio</p>
@@ -178,7 +178,7 @@ export function AdminNav({ name, email }: { name: string; email: string }) {
         >
           <AdminIcon name="menu" />
         </button>
-        <img src="/media/delta-mark.webp" alt="" width={28} height={28} />
+        <img src="/media/delta-mark.svg" alt="" width={28} height={28} />
         <span className="font-display text-[15px] font-semibold">Panel Delta</span>
       </header>
 

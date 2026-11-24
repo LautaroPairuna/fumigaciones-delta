@@ -24,7 +24,7 @@ export default async function LoginPage() {
         />
         <div className="absolute inset-0 bg-[linear-gradient(160deg,rgb(28_18_20/0.55),rgb(28_18_20/0.92)_70%)]" />
         <div className="anim-fade-up relative flex items-center gap-3">
-          <img src="/media/delta-mark.webp" alt="" width={44} height={44} />
+          <img src="/media/delta-mark.svg" alt="" width={44} height={44} />
           <span className="flex flex-col leading-none font-display">
             <span className="text-[11px] font-extrabold tracking-[0.24em] text-white/70">
               FUMIGACIONES
@@ -60,7 +60,7 @@ export default async function LoginPage() {
       <main id="contenido" className="flex flex-col items-center justify-center px-6 py-12">
         <div className="anim-scale-in w-full max-w-[380px]">
           <img
-            src="/media/delta-mark.webp"
+            src="/media/delta-mark.svg"
             alt=""
             width={52}
             height={52}

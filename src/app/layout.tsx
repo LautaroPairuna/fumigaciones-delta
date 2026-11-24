@@ -8,7 +8,13 @@ const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope", displa
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: site.brand,
-  icons: { icon: "/media/delta-mark.png", apple: "/media/delta-mark.png" },
+  icons: {
+    icon: [
+      { url: "/media/delta-mark.svg", type: "image/svg+xml" },
+      { url: "/media/delta-mark.png", type: "image/png" },
+    ],
+    apple: "/media/delta-mark.png",
+  },
 };
 
 export const viewport: Viewport = {
