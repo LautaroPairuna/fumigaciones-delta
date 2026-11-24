@@ -147,12 +147,12 @@ export function SiteHeader() {
           aria-label="Fumigaciones Delta, ir al inicio"
           translate="no"
         >
-          <img className="brand-mark" src="/media/delta-mark.svg" alt="" width={96} height={96} />
+          <img className="brand-mark" src="/media/delta-icon.svg" alt="" width={96} height={96} />
           <span className="flex flex-col items-start leading-none">
-            <span className="mb-[0.18em] text-[0.3em] font-extrabold tracking-[0.24em]">
+            <span className="mb-[0.18em] text-[0.3em] font-extrabold tracking-[0.24em] text-black">
               FUMIGACIONES
             </span>
-            <span>DELTA</span>
+            <span className="text-[#ff0010]">DELTA</span>
           </span>
         </a>
         {/* biome-ignore lint/a11y/useKeyWithClickEvents: delegated handler for the anchors inside, which are keyboard-activated natively */}

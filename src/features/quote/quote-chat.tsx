@@ -301,7 +301,7 @@ function BrandMark() {
   return (
     <img
       className="brand-mark"
-      src="/media/delta-mark.svg"
+      src="/media/delta-icon.svg"
       alt=""
       width={96}
       height={96}

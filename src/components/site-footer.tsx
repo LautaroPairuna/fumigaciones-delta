@@ -25,7 +25,7 @@ export function SiteFooter({
             >
               <img
                 className="brand-mark"
-                src="/media/delta-mark.svg"
+                src="/media/delta-icon.svg"
                 alt=""
                 width={96}
                 height={96}
@@ -35,7 +35,7 @@ export function SiteFooter({
                 <span className="mb-[0.18em] text-[0.3em] font-extrabold tracking-[0.24em]">
                   FUMIGACIONES
                 </span>
-                <span>DELTA</span>
+                <span className="text-[#ff0010]">DELTA</span>
               </span>
             </a>
             <p>{tagline}</p>

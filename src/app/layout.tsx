@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: site.brand,
   icons: {
     icon: [
-      { url: "/media/delta-mark.svg", type: "image/svg+xml" },
+      { url: "/media/delta-icon.svg", type: "image/svg+xml" },
       { url: "/media/delta-mark.png", type: "image/png" },
     ],
     apple: "/media/delta-mark.png",

@@ -32,7 +32,7 @@ html.theme-delta .site-footer :focus-visible { outline-color: #fff; }
 
 html.theme-delta .site-header { background: #f7f4f2ee; }
 html.theme-delta .brand { color: #c4121c; font-size: clamp(30px, 4vw, 42px); letter-spacing: -.045em; }
-html.theme-delta .brand-mark { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; }
+html.theme-delta .brand-mark { width: 46px; height: 46px; }
 html.theme-delta .reading-progress span { background: #c4121c; }
 html.theme-delta .nav-cta,
 html.theme-delta .button { background: #c4121c; color: #fff; }
